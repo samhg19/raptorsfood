@@ -24,7 +24,13 @@ $(document).ready(function( )
     .done( response =>
     {
       if ( response.status != 200 )
-      { }
+      {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: response.msg,
+        });
+      }
       else if ( response.status == 200 )
         window.location.href = response.url;
     });

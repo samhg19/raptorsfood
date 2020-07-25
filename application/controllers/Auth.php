@@ -36,22 +36,31 @@ class Auth extends CI_Controller
         'isLogin' => true,
         'matricula' => $response[ 'matricula' ],
         'nombre' => $response[ 'nombre' ],
+        'isAdmin' => $response[ 'isAdmin' ],
       );
 
       //damos de alta las cookies
       $this->session->set_userdata($cookies);
 
-      //redireccionamos al Dashboard
+      $url = null;
+
+      //redireccionamos al Dashboard correspondiente
+      if ( $response[ 'isAdmin' ] == 0 )
+        $url = base_url( 'Inicio' );
+      else
+        $url = base_url( 'App' );
+
+      //respuesta a la vista
       $servidor = array(
         'status' => 200,
-        'url' => base_url( 'Inicio' )
+        'url' => $url
       );
 
     }
     else
     {
       $servidor = array(
-        'status' => 402,
+        'status' => 401,
         'msg' => $response[ 'msg' ],
       );
     }
@@ -87,17 +96,6 @@ class Auth extends CI_Controller
     {
       echo "Error";
     }
-  }
-
-  function In( )
-  {
-    $assets = array( 'css' => 'login', 'js' => 'login' );
-
-    $this->load->view( 'common/head', $assets );
-
-    $this->load->view( 'back/start' );
-
-    $this->load->view( 'common/footer', $assets );
   }
 
 }
