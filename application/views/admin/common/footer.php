@@ -1,4 +1,7 @@
 
+
+    </div>
+
     <!--JQuery-->
     <script src="https://code.jquery.com/jquery-3.5.1.js"
             integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
@@ -11,6 +14,12 @@
 
     <!--Sweet Alerts 2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <!-- AdminLTE 3 -->
+    <script type="text/javascript" src="<?= base_url() ?>resources/plugins/adminlte/js/adminlte.min.js"></script>
+
+    <!-- Font Awesome 5.13.1 -->
+    <script src="<?= base_url( ) ?>resources/plugins/fontawesome/js/all.min.js"></script>
 
     <!-- own -->
     <script type="text/javascript" src="<?= base_url() ?>resources/js/<?= $js ?>.js"></script>

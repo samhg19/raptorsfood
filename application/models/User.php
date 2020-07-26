@@ -22,6 +22,7 @@ class User extends CI_Model
             'status' => 200,
             'matricula' => $fila->matricula,
             'nombre' => $fila->nombre,
+            'isAdmin' => $fila->isAdmin,
           );
 
           return $reponse;

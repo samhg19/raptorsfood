@@ -16,11 +16,9 @@
     <!-- Google fonst -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kalam">
 
-    <!-- Sweet alerts 2 theme -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css">
-
-    <!-- own style -->
-    <link rel="stylesheet" href="<?= base_url() ?>resources/css/<?= $css ?>.css">
+    <!-- AdminLTE 3 -->
+    <link rel="stylesheet" href="<?= base_url( ) ?>resources/plugins/adminlte/css/adminlte.min.css">
 
   </head>
   <body>
+    <div class="wrapper">

@@ -15,11 +15,11 @@ class App extends CI_Controller
     {
       $assets = array( 'css' => 'login', 'js' => 'login' );
 
-      $this->load->view( 'common/head', $assets );
+      $this->load->view( 'app/common/head', $assets );
 
-      $this->load->view( 'back/start' );
+      $this->load->view( 'app/sections/start' );
 
-      $this->load->view( 'common/footer', $assets );
+      $this->load->view( 'app/common/footer', $assets );
     }
     else
       header( 'Location: ' . base_url( '/login' ) );

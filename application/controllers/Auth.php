@@ -12,13 +12,33 @@ class Auth extends CI_Controller
 
   function Login( )
   {
-    $assets = array( 'css' => 'login', 'js' => 'login' );
+    //verificamos que exista una sesion
+    if ( $this->session->userdata( 'isLogin' ) )
+    {
+      switch ( $this->session->userdata( 'isAdmin' ) )
+      {
+        case 0:
+          //es un vat@ cualquiera
+          header( 'Location: ' . base_url( '/app' ) );
+          break;
+        case 1:
+          //es de la cafeteria
+          header( 'Location: ' . base_url( '/inicio' ) );
+          break;
+      }
+    }
+    else
+    {
+      //no existe nada
+      $assets = array( 'css' => 'login', 'js' => 'login' );
 
-    $this->load->view( 'common/head', $assets );
+      $this->load->view( 'common/head', $assets );
 
-    $this->load->view( 'auth/login' );
+      $this->load->view( 'auth/login' );
 
-    $this->load->view( 'common/footer', $assets );
+      $this->load->view( 'common/footer', $assets );
+    }
+
   }
 
   function Access( )
@@ -46,9 +66,9 @@ class Auth extends CI_Controller
 
       //redireccionamos al Dashboard correspondiente
       if ( $response[ 'isAdmin' ] == 0 )
-        $url = base_url( 'Inicio' );
+        $url = base_url( 'app' );
       else
-        $url = base_url( 'App' );
+        $url = base_url( 'inicio' );
 
       //respuesta a la vista
       $servidor = array(

@@ -15,11 +15,17 @@ class Admin extends CI_Controller
     {
       $assets = array( 'css' => 'login', 'js' => 'login' );
 
-      $this->load->view( 'common/head', $assets );
+      $this->load->view( 'admin/common/head', $assets );
 
-      $this->load->view( 'back/start' );
+      $this->load->view( 'admin/common/navbar' );
 
-      $this->load->view( 'common/footer', $assets );
+      $sidebar = array( 'name' => $this->session->userdata( 'nombre' ), );
+      $this->load->view( 'admin/common/sidebar', $sidebar );
+
+      //contenido de la vista
+      $this->load->view( 'admin/sections/start' );      
+
+      $this->load->view( 'admin/common/footer', $assets );
     }
     else
       header( 'Location: ' . base_url( '/login' ) );
