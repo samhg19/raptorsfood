@@ -13,13 +13,18 @@ class App extends CI_Controller
     //no queremos chismosos
     if ( $this->session->userdata( 'isLogin' ) )
     {
-      $assets = array( 'css' => 'login', 'js' => 'login' );
+      $head = array( 'css' => 'start', 'title' => 'Raptor\'s Food' );
+      $this->load->view( 'app/common/head', $head );
 
-      $this->load->view( 'app/common/head', $assets );
+      $this->load->view( 'app/common/navbar' );
+
+      $sidebar = array( 'name' => $this->session->userdata( 'nombre' ), );
+      $this->load->view( 'app/common/sidebar', $sidebar );
 
       $this->load->view( 'app/sections/start' );
 
-      $this->load->view( 'app/common/footer', $assets );
+      $footer = array( 'js' => 'start' );
+      $this->load->view( 'app/common/footer', $footer );
     }
     else
       header( 'Location: ' . base_url( '/login' ) );
