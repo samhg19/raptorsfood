@@ -118,4 +118,13 @@ class Auth extends CI_Controller
     }
   }
 
+  function Logout( )
+  {
+    //borramos todo
+    $this->session->sess_destroy();
+
+    //redireccionamos al login
+    header( 'Location: ' . base_url( '/login' ) );
+  }
+
 }

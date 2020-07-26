@@ -2,11 +2,10 @@
 
       <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
-
           <div class="sidebar">
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
               <div class="image">
-                
+
               </div>
               <div class="info">
                 <a href="#" class="d-block"><?= $name ?></a>
