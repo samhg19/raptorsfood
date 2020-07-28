@@ -21,7 +21,18 @@ class App extends CI_Controller
       $sidebar = array( 'name' => $this->session->userdata( 'nombre' ), );
       $this->load->view( 'app/common/sidebar', $sidebar );
 
+      //vistas que forman la app
+      //inicio
       $this->load->view( 'app/sections/start' );
+
+      //pedidos
+      $this->load->view( 'app/sections/pedido' );
+
+      //historial
+      $this->load->view( 'app/sections/history' );
+
+      //notificaciones
+      $this->load->view( 'app/sections/avisos' );
 
       $footer = array( 'js' => 'start' );
       $this->load->view( 'app/common/footer', $footer );

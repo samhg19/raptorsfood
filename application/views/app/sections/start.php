@@ -1,10 +1,4 @@
 
-        <div class="content-wrapper">
-          <div class="content">
-            <div class="container-fluid">
-
-              
-
+            <div class="start animate__animated">
+              <h3>Inicio</h3>
             </div>
-          </div>
-        </div>

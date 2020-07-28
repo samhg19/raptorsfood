@@ -19,9 +19,13 @@
     <!-- AdminLTE 3 -->
     <link rel="stylesheet" href="<?= base_url( ) ?>resources/plugins/adminlte/css/adminlte.min.css">
 
-    <!-- AdminLTE 3 -->
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" >
+
+    <!-- Own style -->
     <link rel="stylesheet" href="<?= base_url( ) ?>resources/app/css/<?= $css ?>.css">
 
   </head>
   <body>
     <div class="wrapper">
+      <input type="hidden" value="<?= base_url( ) ?>" id="url">

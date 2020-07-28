@@ -1,4 +1,7 @@
 
+          </div>
+        </div>
+      </div>
 
     </div>
 
@@ -22,7 +25,7 @@
     <script src="<?= base_url( ) ?>resources/plugins/fontawesome/js/all.min.js"></script>
 
     <!-- own -->
-    <script type="text/javascript" src="<?= base_url() ?>resources/js/<?= $js ?>.js"></script>
+    <script type="text/javascript" src="<?= base_url() ?>resources/app/js/<?= $js ?>.js"></script>
 
   </body>
 </html>
