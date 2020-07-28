@@ -117,7 +117,7 @@ $(document).ready(function( )
         case '.menu':
           $( actualView ).addClass( 'd-none' );
           break;
-        case '.historico':
+        case '.historial':
           $( actualView ).addClass( 'd-none' );
           break;
       }
