@@ -56,6 +56,7 @@ $route['salir'] = 'Auth/Logout';
 
 //rutas del cafeteria
 $route['inicio'] = 'Admin/Index';
+$route['pedidos'] = 'Admin/Pedidos';
 
 //rutas del alumno
 $route['app'] = 'App/Index';

@@ -15,50 +15,38 @@
             <nav class="mt-2">
               <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-                <li class="nav-item has-treeview menu-open">
-                  <a href="#" class="nav-link">
-                    <i class="fas fa-store"></i>
-                    <p>
-                      Menú
-                      <i class="right fas fa-angle-left"></i>
-                    </p>
-                  </a>
-                  <ul class="nav nav-treeview">
-
-                    <li class="nav-item">
-                      <a href="#" class="nav-link">
-                        <i class="fas fa-plus"></i>
-                        <p>Item 1</p>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
-                    Enlace
+                  <a href="<?= base_url( '/inicio' ) ?>" class="nav-link active">
+                    <i class="nav-icon fas fa-tv"></i>
+                    Dashboard
                   </a>
                 </li>
 
                 <li class="nav-item">
                   <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
-                    Enlace
+                    <i class="nav-icon fas fa-clipboard"></i>
+                    Menú
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="<?= base_url( '/pedidos' ) ?>" class="nav-link">
+                    <i class="nav-icon fas fa-box"></i>
+                    Pedidos
                   </a>
                 </li>
 
                 <li class="nav-item">
                   <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
-                    Enlace
+                    <i class="nav-icon fas fa-comment"></i>
+                    Mensajes
                   </a>
                 </li>
 
                 <li class="nav-item">
                   <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
-                    Enlace
+                    <i class="nav-icon fas fa-users"></i>
+                    Usuarios
                   </a>
                 </li>
 

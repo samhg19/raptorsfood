@@ -26,6 +26,6 @@
     <link rel="stylesheet" href="<?= base_url( ) ?>resources/app/css/<?= $css ?>.css">
 
   </head>
-  <body>
+  <body class="sidebar-collapse">
     <div class="wrapper">
       <input type="hidden" value="<?= base_url( ) ?>" id="url">

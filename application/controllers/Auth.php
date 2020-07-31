@@ -101,8 +101,8 @@ class Auth extends CI_Controller
 
   function NewRegister( )
   {
-    $usuario = array( 'matricula' => 'A0353', 'nombre' => 'Samantha Hernández', 'email' => 'samantha@gmail.com',
-                      'password' => '12345678', 'carrera' => 'TIC\'s' );
+    $usuario = array( 'matricula' => 'RF001', 'nombre' => 'Nombre inventado', 'email' => 'RaptorsFood1@gmail.com',
+                      'password' => '12345678', 'carrera' => 'N/A' );
 
     //enviamos los datos al modelo, para que haga el registro en la bd
     $registro = $this->User->Register( $usuario );
