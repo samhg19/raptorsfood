@@ -2,11 +2,11 @@
       <nav class="main-header nav bottom-navbar fixed-bottom">
         <a class="nav-item-botom" data-widget="pushmenu">
           <i class="fas fa-bars nav__icon"></i>
-          <span class="nav__text">Menú</span>
+          <span class="nav__text">Config.</span>
         </a>
         <a href="#" id="nuevo_pedido" class="nav-item-botom">
           <i class="fas fa-hamburger nav__icon"></i>
-          <span class="nav__text">Pedidos</span>
+          <span class="nav__text">Menú</span>
         </a>
         <a href="#" id="home" class="nav-item-botom active">
           <i class="fas fa-home nav__icon"></i>

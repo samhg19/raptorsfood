@@ -15,29 +15,22 @@
 
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
-                  Enlace
+                  <i class="nav-icon fas fa-star"></i>
+                  Inicio
                 </a>
               </li>
 
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
-                  Enlace
+                  <i class="nav-icon fas fa-cog"></i>
+                  Configuración
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
-                  Enlace
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
-                  Enlace
+                <a href="<?= base_url( '/salir' ) ?>" class="nav-link">
+                  <i class="nav-icon fas fa-sign-out-alt"></i>
+                  Salir
                 </a>
               </li>
 
