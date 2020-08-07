@@ -8,12 +8,11 @@
             <div class="container-fluid">
 
               <div class="row">
-                <div class="card w-100  ">
+                <div class="card w-100 mt-5 ">
                   <div class="card-header border-transparent">
                     <h3 class="card-title">Ultimos pedidos</h3>
 
                   </div>
-                  <!-- /.card-header -->
                   <div class="card-body p-0">
                     <div class="table-responsive">
                       <table class="table m-0 text-center">

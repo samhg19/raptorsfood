@@ -1,5 +1,5 @@
 
-            <div class="menu animate__animated">
+            <div class="menu d-none animate__animated">
 
               <div class="menu-float-carrito card">
                 <div class="row">
