@@ -24,6 +24,38 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 
+    <!-- QR -->
+    <script src="<?= base_url( ) ?>resources/plugins/qr/qr_packed.js"></script>
+
+    <!-- Leer QR -->
+    <script type="text/javascript">
+
+      function scanQR( node )
+      {
+        let reader = new FileReader();
+
+        reader.onload = function()
+        {
+          node.value = "";
+          qrcode.callback = function(res)
+          {
+            if ( !( res instanceof Error ) )
+            {
+              //pasamos a la siguiente vista
+              console.log( res );
+            }
+            else
+            {
+              imprimir( '¡Ups!', 'No se detectó el código QR. Intente de nuevo', 'error' );
+            }
+          };
+          qrcode.decode(reader.result);
+        };
+        reader.readAsDataURL(node.files[0]);
+      }
+
+    </script>
+
     <!-- own -->
     <script type="text/javascript" src="<?= base_url() ?>resources/admin/js/<?= $js ?>.js"></script>
 

@@ -19,6 +19,9 @@
     <!-- AdminLTE 3 -->
     <link rel="stylesheet" href="<?= base_url( ) ?>resources/plugins/adminlte/css/adminlte.min.css">
 
+    <!-- Own style -->
+    <link rel="stylesheet" href="<?= base_url( ) ?>resources/admin/css/<?= $css ?>.css">
+
   </head>
   <body>
     <div class="wrapper">

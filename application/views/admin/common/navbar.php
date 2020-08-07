@@ -4,6 +4,17 @@
             <li class="nav-item">
               <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
+            <li class="nav-item">
+              <div class="code-container nav-link">
+                <i class="fas fa-qrcode"></i>
+                Leer pedido
+                <input type=file
+                      accept="image/*"
+                      capture=environment
+                      onChange="scanQR(this)"
+                      tabindex=-1/>
+              </div>
+            </li>
           </ul>
 
           <ul class="navbar-nav ml-auto">

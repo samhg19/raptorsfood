@@ -2,9 +2,11 @@
 .code-container
 {
   cursor: pointer;
+  align-items: center;
+  text-align: center;
 }
 
-.code-container > input[type=file]
+.code-container >  input[type=file]
 {
   position: absolute;
   overflow: hidden;
