@@ -55,25 +55,18 @@
 
 /* --- Menú --- */
 
-.options
-{
-  height: 100vh;
-}
-
 .option
 {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 25vh !important;
 }
 
 #cart-button
 {
   cursor: pointer;
   text-decoration: none;
-
 }
 
 #cart-button:hover
