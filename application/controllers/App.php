@@ -55,7 +55,10 @@ class App extends CI_Controller
     //logica para generar pedido
 
     //logica para generar QR
+    //ubicacion - local
     $SERVERFILEPATH = $_SERVER['DOCUMENT_ROOT'] . '/raptorsfood/resources/images/pedidos/';
+    //ubicacion -servidor
+    //$SERVERFILEPATH = $_SERVER['DOCUMENT_ROOT'] . '/resources/images/pedidos/';
 
     $qr_name = 'qrPedido_' . 2 . '.png';
     $place = $SERVERFILEPATH . $qr_name;
