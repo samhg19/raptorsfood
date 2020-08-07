@@ -1,4 +1,8 @@
 
+//variables globales del menú
+var actualMenuView = '.menu-start';
+var beforeMenuView = '.menu-start';
+
 function activeItem( activar )
 {
   //removemos la clase de todos los elementos
@@ -9,6 +13,19 @@ function activeItem( activar )
 
   //la agregamos al elemento
   $( activar ).addClass( 'active' );
+}
+
+//funciones externas del menu
+function setCategorie( id )
+{
+  beforeMenuView = actualMenuView;
+  actualMenuView = '.menu-items';
+  $( actualMenuView ).removeClass( 'd-none' );
+  $( '.menu-carrito' ).addClass( 'd-none' );
+  $( '.menu-start' ).addClass( 'd-none' );
+
+  //llamamos a la base de datos con el id de la categorias
+  //esto con el fin de obtener los productos de esa categoria
 }
 
 $(document).ready(function( )
@@ -125,6 +142,38 @@ $(document).ready(function( )
       actualView = '.avisos';
       $( actualView ).removeClass( 'd-none' );
     }
+
+  });
+
+  //funciones del menú
+
+  $( '#carrito' ).click(function (event)
+  {
+    event.preventDefault( );
+
+    //cambiamos la vista
+    if ( actualView != '.menu-carrito' )
+    {
+      beforeMenuView = actualMenuView;
+      actualMenuView = '.menu-carrito';
+      $( actualMenuView ).removeClass( 'd-none' );
+      $( '.menu-items' ).addClass( 'd-none' );
+      $( '.menu-start' ).addClass( 'd-none' );
+    }
+
+  });
+
+  $( '.menu-back' ).click(function (event)
+  {
+    event.preventDefault( );
+
+    console.log( 'asd' );
+
+    $( actualMenuView ).addClass( 'd-none' );
+    $( beforeMenuView ).removeClass( 'd-none' );
+
+    actualMenuView = beforeMenuView;
+    beforeMenuView = '.menu-start';
 
   });
 

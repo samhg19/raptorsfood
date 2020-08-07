@@ -11,7 +11,7 @@
                   <div class="col-6 text-right">
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item">
-                        <a href="#" class="cart-button">
+                        <a href="#" id="carrito" class="cart-button">
                           <i class="fas fa-shopping-cart"></i>
                           <span class="cart-items">0</span>
                         </a>
@@ -37,7 +37,7 @@
                     <div class="row">
                       <div class="col-1"></div>
                       <div class="col-5">
-                        <div class="card option">
+                        <div class="card option" onclick="setCategorie(<?= $categoria->id ?>)">
                           <div class="card-body">
                             <i class="fas fa-3x <?= $categoria->icon ?>"></i>
                             <p><?= $categoria->nombre ?></p>
@@ -51,7 +51,7 @@
                         $isRow = true;
                     ?>
                       <div class="col-5">
-                        <div class="card option">
+                        <div class="card option" onclick="setCategorie(<?= $categoria->id ?>)">
                           <div class="card-body">
                             <i class="fas fa-3x <?= $categoria->icon ?>"></i>
                             <p><?= $categoria->nombre ?></p>
@@ -80,7 +80,7 @@
                   <div class="card-header text-center bg-light">
                     <div class="row">
                       <div class="col-1">
-                        <a href="#">
+                        <a href="#" class="menu-back">
                           <i class="fas fa-arrow-left"></i>
                         </a>
                       </div>
@@ -164,7 +164,7 @@
                   <div class="card-header text-center bg-light">
                     <div class="row">
                       <div class="col-1">
-                        <a href="#">
+                        <a href="#" class="menu-back">
                           <i class="fas fa-arrow-left"></i>
                         </a>
                       </div>
