@@ -1,7 +1,7 @@
 
             <div class="menu animate__animated">
 
-              <div class="card d-none">
+              <div class="menu-float-carrito card">
                 <div class="row">
                   <div class="col-6">
                     <ul class="list-group list-group-flush">
@@ -21,7 +21,7 @@
                 </div>
               </div>
 
-              <div class="menu-start d-none">
+              <div class="menu-start">
 
                 <div class="options">
                   <?php
@@ -159,6 +159,7 @@
               </div>
 
               <div class="menu-carrito d-none">
+                <div class="container-fluid"> <br> </div>
 
                 <div class="card">
                   <div class="card-header text-center bg-light">
@@ -206,9 +207,13 @@
                   </div>
                 </div>
 
+                <div class="row">
+                  <button type="button" id="do-pedido" class="btn btn-success btn-block"> Realizar pedido </button>
+                </div>
+
               </div>
 
-              <div class="menu-pedido">
+              <div class="menu-pedido d-none">
                 <div class="container-fluid"> <br> </div>
 
                 <div class="card mt-2">
@@ -216,16 +221,17 @@
                     <h5>¡Pedido realizado!</h5>
                   </div>
                   <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="row">
+                      <div class="col-1"></div>
+                      <div class="col-10">
+                        <img src="" alt="QR pedido" id="qr-pedido-image" class="img-fluid mb-3">
+                      </div>
+                      <div class="col-1"></div>
+                    </div>
+                    <p class="card-text">Utiliza este código QR para recoger tu pedido</p>
                   </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                  </ul>
-                  <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+                  <div class="card-body text-center">
+                    <a href="#" id="cerrar-compra" class="card-link">Cerrar</a>
                   </div>
                 </div>
 

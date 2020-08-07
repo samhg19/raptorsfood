@@ -62,7 +62,13 @@ class App extends CI_Controller
 
     QRcode::png( 'Prueba', $place );
 
-	  echo"<center><img src=". base_url( ) .'resources/images/pedidos/' . $qr_name . "></center";
+    $servidor =
+    [
+      'status' => 200,
+      'qr' => base_url( ) .'resources/images/pedidos/' . $qr_name,
+    ];
+
+    echo json_encode( $servidor );
   }
 
 }

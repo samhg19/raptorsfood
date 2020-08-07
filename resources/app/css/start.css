@@ -77,3 +77,8 @@
   border-radius: 25px;
   padding: 2px 2px 2px 2px;
 }
+
+#qr-pedido-image
+{
+  width: 100%;
+}

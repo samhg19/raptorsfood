@@ -3,6 +3,8 @@
 var actualMenuView = '.menu-start';
 var beforeMenuView = '.menu-start';
 
+var url = $( '#url' ).val( );
+
 function activeItem( activar )
 {
   //removemos la clase de todos los elementos
@@ -167,13 +169,60 @@ $(document).ready(function( )
   {
     event.preventDefault( );
 
-    console.log( 'asd' );
-
     $( actualMenuView ).addClass( 'd-none' );
     $( beforeMenuView ).removeClass( 'd-none' );
 
     actualMenuView = beforeMenuView;
     beforeMenuView = '.menu-start';
+
+  });
+
+  $( '#do-pedido' ).click(function (event)
+  {
+    event.preventDefault( );
+
+    //realizamos la petición
+    $.ajax({
+      url: url + 'App/GenerarPedido',
+      type: 'POST',
+      dataType: 'json',
+      data: { pedido: 1, }
+    })
+    .done( response =>
+    {
+      if ( response.status != 200 )
+      {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: response.msg,
+        });
+      }
+      else if ( response.status == 200 )
+      {
+
+        $( '#qr-pedido-image' ).attr( 'src', response.qr);
+
+        actualMenuView = '.menu-pedido';
+        beforeMenuView = '.menu-start';
+
+        $( actualMenuView ).removeClass( 'd-none' );
+        $( '.menu-carrito' ).addClass( 'd-none' );
+      }
+    });
+
+  });
+
+  $( '#cerrar-compra' ).click(function (event)
+  {
+    event.preventDefault( );
+
+    $( actualMenuView ).addClass( 'd-none' );
+    $( '.menu-start' ).removeClass( 'd-none' );
+
+    actualMenuView = '.menu-start';
+    beforeMenuView = '.menu-start';
+
 
   });
 

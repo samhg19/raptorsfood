@@ -43,3 +43,4 @@
       <div class="content-wrapper">
         <div class="content">
           <div class="container-fluid">
+            <input type="hidden" value="<?= base_url( ) ?>" id="url">
