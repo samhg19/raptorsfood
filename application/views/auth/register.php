@@ -6,13 +6,13 @@
 				<div class="col-sm-6 form-group">
 					<label class="text-right">Matricula:</label>
 					<div>
-						<input type="text" class="form-control" placeholder="Tu matricula" name="matricula" id="matricula">
+						<input type="text" class="form-control" placeholder="Tu matricula" name="matricula" id="matricula" required>
 					</div>
 				</div>
 				<div class="col-sm-6 form-group">
 					<label class="text-right">Nombre completo:</label>
 					<div>
-						<input type="text" class="form-control" placeholder="Tu nombre" name="password" id="name">
+						<input type="text" class="form-control" placeholder="Tu nombre" name="password" id="name" required>
 					</div>
 				</div>
 			</div>
@@ -21,7 +21,7 @@
 				<div class="col-sm-6 form-group">
 					<label class="text-right">Correo:</label>
 					<div>
-						<input type="email" class="form-control" placeholder="example@mail.com" name="matricula" id="email">
+						<input type="email" class="form-control" placeholder="example@mail.com" name="matricula" id="email" required>
 					</div>
 				</div>
 				<div class="col-sm-6 form-group">
@@ -40,13 +40,13 @@
 				<div class="col-sm-6 form-group">
 					<label class="text-right">Contraseña:</label>
 					<div>
-						<input type="password" class="form-control" placeholder="Passowrd dificil de adivinar" name="matricula" id="password">
+						<input type="password" class="form-control" placeholder="Passowrd dificil de adivinar" name="matricula" id="password" required>
 					</div>
 				</div>
 				<div class="col-sm-6 form-group">
 					<label class="text-right">Repite tu contraseña:</label>
 					<div>
-						<input type="password" class="form-control" placeholder="Passowrd dificil de adivinar" name="password" id="rPassword">
+						<input type="password" class="form-control" placeholder="Passowrd dificil de adivinar" name="password" id="rPassword" required>
 					</div>
 				</div>
 			</div>

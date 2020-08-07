@@ -1,22 +1,35 @@
 $(document).ready(function( )
 {
 
-  $( '#login-form' ).submit(function( event )
+  $( '#register-form' ).submit(function( event )
   {
     event.preventDefault( );
 
     var url = $('#url').val( );
 
-    //Esto es un JSON
+    //Contraseñas iguales ¿?
+    if ( $('#password').val( ) != $('#rPassword').val( ) )
+    {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Las contraseñas no son iguales',
+      });
+      return;
+    }
+
     var data =
     {
       matricula: $('#matricula').val( ),
+      nombre: $('#name').val( ),
+      correo: $('#email').val( ),
+      carrera: $('#carrera').val( ),
       password: $('#password').val( )
     };
 
-    //Aqui contactamos con el servidor
+    //Contactamos con el servidor
     $.ajax({
-      url: url + 'Auth/Access',
+      url: url + 'Auth/NewRegister',
       type: 'POST',
       dataType: 'json',
       data: { data: data, }

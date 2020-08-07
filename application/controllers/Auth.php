@@ -101,8 +101,16 @@ class Auth extends CI_Controller
 
   function NewRegister( )
   {
-    $usuario = array( 'matricula' => 'RF001', 'nombre' => 'Nombre inventado', 'email' => 'RaptorsFood1@gmail.com',
-                      'password' => '12345678', 'carrera' => 'N/A' );
+    $post = $this->input->post()[ 'data' ];
+
+    $usuario =
+    [
+      'matricula' => $post[ 'matricula' ],
+      'nombre' => $post[ 'nombre' ],
+      'email' => $post[ 'correo' ],
+      'password' => $post[ 'password' ],
+      'carrera' => $post[ 'carrera' ]
+    ];
 
     //enviamos los datos al modelo, para que haga el registro en la bd
     $registro = $this->User->Register( $usuario );
@@ -110,12 +118,37 @@ class Auth extends CI_Controller
     //si el registro es exitoso
     if ( $registro )
     {
-      echo "Registro exitoso";
+
+      //crearemos una session con los datos
+      $cookies = array
+      (
+        'isLogin' => true,
+        'matricula' => $post[ 'matricula' ],
+        'nombre' => $post[ 'nombre' ],
+        'isAdmin' => 0,
+      );
+
+      //damos de alta las cookies
+      $this->session->set_userdata($cookies);
+
+      $url = base_url( 'app' );
+
+      //respuesta a la vista
+      $servidor = array(
+        'status' => 200,
+        'url' => $url
+      );
     }
     else
     {
-      echo "Error";
+      //respuesta a la vista
+      $servidor = array(
+        'status' => 400,
+        'msg' => 'No se pudo registrar en el sistema, intente de nuevo más tarde'
+      );
     }
+
+    echo json_encode( $servidor );
   }
 
   function Logout( )
