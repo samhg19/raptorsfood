@@ -24,68 +24,46 @@
               <div class="menu-start">
 
                 <div class="options">
-                  <div class="row">
-                    <div class="col-1"></div>
-                    <div class="col-5">
-                      <div class="card option">
-                        <div class="card-body">
-                          <i class="fas fa-3x fa-wine-bottle"></i>
-                          <p>Bebidas</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-5">
-                      <div class="card option">
-                        <div class="card-body">
-                          <i class="fas fa-3x fa-drumstick-bite"></i>
-                          <p>Comida</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-1"></div>
-                  </div>
+                  <?php
 
-                  <div class="row">
-                    <div class="col-1"></div>
-                    <div class="col-5">
-                      <div class="card option">
-                        <div class="card-body">
-                          <i class="fas fa-3x fa-candy-cane"></i>
-                          <p>Dulces</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-5">
-                      <div class="card option">
-                        <div class="card-body">
-                          <i class="fas fa-3x fa-cookie-bite"></i>
-                          <p>Frituras</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-1"></div>
-                  </div>
+                    $isRow = true;
 
-                  <div class="row">
-                    <div class="col-1"></div>
-                    <div class="col-5">
-                      <div class="card option">
-                        <div class="card-body">
-                          <i class="fas fa-3x fa-apple-alt"></i>
-                          <p>P. Sanos</p>
+                    foreach ($categorias as $categoria)
+                    {
+                      if ( $isRow )
+                      {
+                        $isRow = false;
+                    ?>
+                    <div class="row">
+                      <div class="col-1"></div>
+                      <div class="col-5">
+                        <div class="card option">
+                          <div class="card-body">
+                            <i class="fas fa-3x <?= $categoria->icon ?>"></i>
+                            <p><?= $categoria->nombre ?></p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="col-5">
-                      <div class="card option">
-                        <div class="card-body">
-                          <i class="fas fa-3x fa-utensils"></i>
-                          <p>Menú del dia</p>
+                    <?php
+                      }
+                      else
+                      {
+                        $isRow = true;
+                    ?>
+                      <div class="col-5">
+                        <div class="card option">
+                          <div class="card-body">
+                            <i class="fas fa-3x <?= $categoria->icon ?>"></i>
+                            <p><?= $categoria->nombre ?></p>
+                          </div>
                         </div>
                       </div>
+                      <div class="col-1"></div>
                     </div>
-                    <div class="col-1"></div>
-                  </div>
+                    <?php
+                      }
+                    }
+                  ?>
                 </div>
 
                 <div class="card text-white bg-danger mb-3">

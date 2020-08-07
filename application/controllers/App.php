@@ -5,6 +5,9 @@ class App extends CI_Controller
   public function __construct()
   {
     parent::__construct();
+
+    //Carga de la base de datos
+    $this->load->model('AppModel');
   }
 
   //Acceso al sistema para alumnos
@@ -26,7 +29,9 @@ class App extends CI_Controller
       $this->load->view( 'app/sections/start' );
 
       //pedidos
-      $this->load->view( 'app/sections/pedido' );
+      $pedidos = array( 'categorias' => $this->AppModel->Categories( ) );
+
+      $this->load->view( 'app/sections/pedido', $pedidos );
 
       //historial
       $this->load->view( 'app/sections/history' );
