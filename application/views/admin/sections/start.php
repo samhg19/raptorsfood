@@ -62,7 +62,7 @@
                       <div class="row">
                         <div class="col-md-8">
                           <p class="text-center">
-                            <strong>VEntas: 1 Jul, 2020 - 31 Jul, 2020</strong>
+                            <strong>Ventas: 1 Jul, 2020 - 31 Jul, 2020</strong>
                           </p>
 
                           <div class="chart">
@@ -78,7 +78,7 @@
                           </p>
 
                           <div class="progress-group">
-                            Ventas de refrescos
+                            Ventas de bebidas
                             <span class="float-right"><b>160</b>/200</span>
                             <div class="progress progress-sm">
                               <div class="progress-bar bg-primary" style="width: 80%"></div>
@@ -96,7 +96,7 @@
 
                           <!-- /.progress-group -->
                           <div class="progress-group">
-                            <span class="progress-text">Ventas de chatarra</span>
+                            <span class="progress-text">Ventas de dulces</span>
                             <span class="float-right"><b>480</b>/800</span>
                             <div class="progress progress-sm">
                               <div class="progress-bar bg-success" style="width: 60%"></div>
@@ -105,7 +105,7 @@
 
                           <!-- /.progress-group -->
                           <div class="progress-group">
-                            Ventas de dulces
+                            Ventas de frituras
                             <span class="float-right"><b>250</b>/500</span>
                             <div class="progress progress-sm">
                               <div class="progress-bar bg-warning" style="width: 50%"></div>

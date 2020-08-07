@@ -21,8 +21,11 @@
     <!-- Font Awesome 5.13.1 -->
     <script src="<?= base_url( ) ?>resources/plugins/fontawesome/js/all.min.js"></script>
 
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
     <!-- own -->
-    <script type="text/javascript" src="<?= base_url() ?>resources/js/<?= $js ?>.js"></script>
+    <script type="text/javascript" src="<?= base_url() ?>resources/admin/js/<?= $js ?>.js"></script>
 
   </body>
 </html>

@@ -41,6 +41,8 @@ $(document).ready(function( )
   //funciones para la navegación de la barra
   $( '#home' ).click( event =>
   {
+    event.preventDefault( );
+
     //activamos el color
     activeItem( '#home' );
 
@@ -68,6 +70,8 @@ $(document).ready(function( )
 
   $( '#nuevo_pedido' ).click( event =>
   {
+    event.preventDefault( );
+
     //activamos el color
     activeItem( '#nuevo_pedido' );
 
@@ -95,6 +99,8 @@ $(document).ready(function( )
 
   $( '#historico' ).click( event =>
   {
+    event.preventDefault( );
+
     //activamos el color
     activeItem( '#historico' );
 
@@ -122,6 +128,8 @@ $(document).ready(function( )
 
   $( '#notify' ).click( event =>
   {
+    event.preventDefault( );
+
     //activamos el color
     activeItem( '#notify' );
 
