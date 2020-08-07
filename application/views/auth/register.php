@@ -1,52 +1,63 @@
-<div class="form-group">
-<div class="col row">
-	<label class="col-md-4 text-right">Matrícula:</label>
-	<div class="col-md-">
-		<input type="text" class="form-control" placeholder="" name="matricula" id="matricula">
-    </div>
-</div>
-</div>
-<div class="form-group">
-	<div class="col row">
-		<label class="col-md-4 text-right">Password:</label>
-		<div class="col-md-8">
-			<input type="password" class="form-control" placeholder="" name="password" id="password">
-		</div>
-	</div>
-</div>
-<div class="form-group">
-	<div class="col row">
- 		<label class="col-md-4 text-right">Nombre:</label>
- 		<div class="col-md-8">
- 			<input type="text" class="form-control" placeholder="Nombre"name="nombre" id="nombre">
-		</div>
-	</div>
- </div>
-<div class="form-group">
-	<div class="col row">
-		<label class="col-md-4 text-right">Email institucional:</label>
-		<div class="col-md-8">
-			<input type="text" class="form-control" placeholder="alguien@utmir.edu.mx" name="email" id="email">
-		</div>
-	</div>
-</div>
+<div class="container">
+	<div class="register-box">
+		<form id="register-form">
+			<input type="hidden" value="<?= base_url( ) ?>" id="url">
+			<div class="row">
+				<div class="col-sm-6 form-group">
+					<label class="text-right">Matricula:</label>
+					<div>
+						<input type="text" class="form-control" placeholder="Tu matricula" name="matricula" id="matricula">
+					</div>
+				</div>
+				<div class="col-sm-6 form-group">
+					<label class="text-right">Nombre completo:</label>
+					<div>
+						<input type="text" class="form-control" placeholder="Tu nombre" name="password" id="name">
+					</div>
+				</div>
+			</div>
 
-<div class="form-group">
-	<div class="col row">
-		<label class="col-md-4 text-right">Carrera:</label>
-		<div class="col-md-8">
-			<select class="form-control" id="carrera" name="carrera">
-				<option value="Agrobiotecnologia">Agrobiotecnologia</option>
-				<option value="Administracion">Administración</option>
-				<option value="Tecnologias de la Informacion">Tecnologias de la Información</option>
-				<option value="Turismo">Turismo</option>
-				<option value="Turismo">Gastronomía</option>
-			</select>
-		</div>
+			<div class="row">
+				<div class="col-sm-6 form-group">
+					<label class="text-right">Correo:</label>
+					<div>
+						<input type="email" class="form-control" placeholder="example@mail.com" name="matricula" id="email">
+					</div>
+				</div>
+				<div class="col-sm-6 form-group">
+					<label class="text-right">Carrera:</label>
+					<div>
+						<select class="custom-select" id="carrera">
+							<option value="1">Carrera 1</option>
+							<option value="2">Carrera 3</option>
+							<option value="3">Carrera 3</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-6 form-group">
+					<label class="text-right">Contraseña:</label>
+					<div>
+						<input type="password" class="form-control" placeholder="Passowrd dificil de adivinar" name="matricula" id="password">
+					</div>
+				</div>
+				<div class="col-sm-6 form-group">
+					<label class="text-right">Repite tu contraseña:</label>
+					<div>
+						<input type="password" class="form-control" placeholder="Passowrd dificil de adivinar" name="password" id="rPassword">
+					</div>
+				</div>
+			</div>
+
+			<div class="row mt-2">
+				<div class="col-sm-4"></div>
+				<div class="col-sm-4">
+					<input class="btn btn-success btn-block" type="submit" value="¡Registrame!">
+				</div>
+				<div class="col-sm-2"></div>
+			</div>
+		</form>
 	</div>
 </div>
-<div class="col-sm-4">
-	<input class="btn btn-success btn-block" type="submit" value="Enviar">
-</div>
-<div class="col-sm-4"></div>
-</form>
