@@ -12,6 +12,7 @@
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   display: flex;
   overflow-x: auto;
+  background: #FFF;
 }
 
 .nav-item-botom
@@ -50,4 +51,35 @@
 .nav__icon
 {
   font-size: 18px;
+}
+
+/* --- Menú --- */
+
+.options
+{
+  height: 100vh;
+}
+
+.option
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 25vh !important;
+}
+
+#cart-button
+{
+  cursor: pointer;
+  text-decoration: none;
+
+}
+
+#cart-button:hover
+{
+  text-decoration: none;
+  background: rgba( 0, 0, 0, 0.5 );
+  border-radius: 25px;
+  padding: 2px 2px 2px 2px;
 }
