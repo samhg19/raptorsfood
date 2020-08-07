@@ -21,7 +21,7 @@
                 </div>
               </div>
 
-              <div class="menu-start d-none">
+              <div class="menu-start">
 
                 <div class="options">
                   <div class="row">
@@ -180,7 +180,7 @@
                 </div>
               </div>
 
-              <div class="menu-carrito">
+              <div class="menu-carrito d-none">
 
                 <div class="card">
                   <div class="card-header text-center bg-light">
