@@ -21,77 +21,164 @@
                 </div>
               </div>
 
-              <div class="options">
-                <div class="row">
-                  <div class="col-1"></div>
-                  <div class="col-5">
-                    <div class="card option">
-                      <div class="card-body">
-                        <i class="fas fa-3x fa-wine-bottle"></i>
-                        <p>Bebidas</p>
+              <div class="menu-start d-none">
+                <div class="options">
+                  <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-5">
+                      <div class="card option">
+                        <div class="card-body">
+                          <i class="fas fa-3x fa-wine-bottle"></i>
+                          <p>Bebidas</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-5">
-                    <div class="card option">
-                      <div class="card-body">
-                        <i class="fas fa-3x fa-drumstick-bite"></i>
-                        <p>Comida</p>
+                    <div class="col-5">
+                      <div class="card option">
+                        <div class="card-body">
+                          <i class="fas fa-3x fa-drumstick-bite"></i>
+                          <p>Comida</p>
+                        </div>
                       </div>
                     </div>
+                    <div class="col-1"></div>
                   </div>
-                  <div class="col-1"></div>
+
+                  <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-5">
+                      <div class="card option">
+                        <div class="card-body">
+                          <i class="fas fa-3x fa-candy-cane"></i>
+                          <p>Dulces</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="card option">
+                        <div class="card-body">
+                          <i class="fas fa-3x fa-cookie-bite"></i>
+                          <p>Frituras</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-1"></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-5">
+                      <div class="card option">
+                        <div class="card-body">
+                          <i class="fas fa-3x fa-apple-alt"></i>
+                          <p>P. Sanos</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="card option">
+                        <div class="card-body">
+                          <i class="fas fa-3x fa-utensils"></i>
+                          <p>Menú del dia</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-1"></div>
+                  </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-1"></div>
-                  <div class="col-5">
-                    <div class="card option">
-                      <div class="card-body">
-                        <i class="fas fa-3x fa-candy-cane"></i>
-                        <p>Dulces</p>
-                      </div>
-                    </div>
+                <div class="card text-white bg-danger mb-3">
+                  <div class="card-header">Avisos</div>
+                  <div class="card-body">
+                    <p class="card-text">-> No hay servicio por COVID-19</p>
+                    <p class="card-text">-> Es un demo, ¿Que esperabas?</p>
                   </div>
-                  <div class="col-5">
-                    <div class="card option">
-                      <div class="card-body">
-                        <i class="fas fa-3x fa-cookie-bite"></i>
-                        <p>Frituras</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-1"></div>
-                </div>
-
-                <div class="row">
-                  <div class="col-1"></div>
-                  <div class="col-5">
-                    <div class="card option">
-                      <div class="card-body">
-                        <i class="fas fa-3x fa-apple-alt"></i>
-                        <p>P. Sanos</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-5">
-                    <div class="card option">
-                      <div class="card-body">
-                        <i class="fas fa-3x fa-utensils"></i>
-                        <p>Menú del dia</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-1"></div>
                 </div>
               </div>
 
-              <div class="card text-white bg-danger mb-3">
-                <div class="card-header">Avisos</div>
-                <div class="card-body">
-                  <p class="card-text">-> No hay servicio por COVID-19</p>
-                  <p class="card-text">-> Es un demo, ¿Que esperabas?</p>
+              <div class="menu-items">
+                <div class="card">
+                  <div class="card-header text-center bg-light">
+                    <div class="row">
+                      <div class="col-1">
+                        <a href="#">
+                          <i class="fas fa-arrow-left"></i>
+                        </a>
+                      </div>
+                      <div class="col-10">
+                        Categoria seleccionada
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-6">
+                          <span>Producto 1</span>
+                        </div>
+                        <div class="col-2">
+                          <b>$--.--</b>
+                        </div>
+                        <div class="col-1"></div>
+                        <div class="col-2">
+                          <button type="button" id="item_<?= 1 ?>" class="btn btn-success btn-sm">
+                            Comprar
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-6">
+                          <span>Producto 2</span>
+                        </div>
+                        <div class="col-2">
+                          <b>$--.--</b>
+                        </div>
+                        <div class="col-1"></div>
+                        <div class="col-2">
+                          <button type="button" id="item_<?= 2 ?>" class="btn btn-success btn-sm">
+                            Comprar
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-6">
+                          <span>Producto 3</span>
+                        </div>
+                        <div class="col-2">
+                          <b>$--.--</b>
+                        </div>
+                        <div class="col-1"></div>
+                        <div class="col-2">
+                          <button type="button" id="item_<?= 3 ?>" class="btn btn-success btn-sm">
+                            Comprar
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-6">
+                          <span>Producto 4</span>
+                        </div>
+                        <div class="col-2">
+                          <b>$--.--</b>
+                        </div>
+                        <div class="col-1"></div>
+                        <div class="col-2">
+                          <button type="button" id="item_<?= 4 ?>" class="btn btn-success btn-sm">
+                            Comprar
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
+
+
 
             </div>
