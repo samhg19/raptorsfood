@@ -2,12 +2,16 @@
 
 class App extends CI_Controller
 {
+
   public function __construct()
   {
     parent::__construct();
 
     //Carga de la base de datos
     $this->load->model('AppModel');
+
+    //generar QR
+    $this->load->library('QR');
   }
 
   //Acceso al sistema para alumnos
@@ -44,6 +48,21 @@ class App extends CI_Controller
     }
     else
       header( 'Location: ' . base_url( '/login' ) );
+  }
+
+  function GenerarPedido( )
+  {
+    //logica para generar pedido
+
+    //logica para generar QR
+    $SERVERFILEPATH = $_SERVER['DOCUMENT_ROOT'] . '/raptorsfood/resources/images/pedidos/';
+
+    $qr_name = 'qrPedido_' . 2 . '.png';
+    $place = $SERVERFILEPATH . $qr_name;
+
+    QRcode::png( 'Prueba', $place );
+
+	  echo"<center><img src=". base_url( ) .'resources/images/pedidos/' . $qr_name . "></center";
   }
 
 }
