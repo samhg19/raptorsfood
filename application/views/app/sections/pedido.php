@@ -1,27 +1,27 @@
 
             <div class="menu animate__animated">
 
-              <div class="menu-start d-none">
-
-                <div class="card">
-                  <div class="row">
-                    <div class="col-6">
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Mi carrito</li>
-                      </ul>
-                    </div>
-                    <div class="col-6 text-right">
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                          <a href="#" class="cart-button">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="cart-items">0</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
+              <div class="card">
+                <div class="row">
+                  <div class="col-6">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Mi carrito</li>
+                    </ul>
+                  </div>
+                  <div class="col-6 text-right">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <a href="#" class="cart-button">
+                          <i class="fas fa-shopping-cart"></i>
+                          <span class="cart-items">0</span>
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
+              </div>
+
+              <div class="menu-start d-none">
 
                 <div class="options">
                   <div class="row">
@@ -97,28 +97,7 @@
                 </div>
               </div>
 
-              <div class="menu-items">
-
-                <div class="card">
-                  <div class="row">
-                    <div class="col-6">
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Mi carrito</li>
-                      </ul>
-                    </div>
-                    <div class="col-6 text-right">
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                          <a href="#" class="cart-button">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="cart-items">0</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
+              <div class="menu-items d-none">
                 <div class="card">
                   <div class="card-header text-center bg-light">
                     <div class="row">
@@ -202,6 +181,52 @@
               </div>
 
               <div class="menu-carrito">
+
+                <div class="card">
+                  <div class="card-header text-center bg-light">
+                    <div class="row">
+                      <div class="col-1">
+                        <a href="#">
+                          <i class="fas fa-arrow-left"></i>
+                        </a>
+                      </div>
+                      <div class="col-10">
+                        Mi carrito
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-borderless">
+                        <thead>
+                          <tr>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">total</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Producto 1</td>
+                            <td class="text-center">1</td>
+                            <td>$--.--</td>
+                          </tr>
+                          <tr>
+                            <td>Producto 2</td>
+                            <td class="text-center">3</td>
+                            <td>$--.--</td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <th colspan="2">Total</td>
+                            <td>$---.--</td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                  </div>
+                </div>
 
               </div>
 
