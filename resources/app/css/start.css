@@ -63,13 +63,13 @@
   text-align: center;
 }
 
-#cart-button
+.cart-button
 {
   cursor: pointer;
   text-decoration: none;
 }
 
-#cart-button:hover
+.cart-button:hover
 {
   text-decoration: none;
   background: rgba( 0, 0, 0, 0.5 );
