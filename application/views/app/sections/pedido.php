@@ -224,17 +224,20 @@
                     <div class="row">
                       <div class="col-1"></div>
                       <div class="col-10">
-                        <img src="" alt="QR pedido" id="qr-pedido-image" class="img-fluid mb-3">
+                        <div class="qr-image">
+                          <img src="" alt="QR pedido" id="qr-pedido-image" class="img-fluid mb-3">
+                        </div>
                       </div>
                       <div class="col-1"></div>
                     </div>
-                    <p class="card-text">Utiliza este código QR para recoger tu pedido</p>
+                    <p class="card-text text-center">Utiliza este código QR para recoger tu pedido</p>
                   </div>
                   <div class="card-body text-center">
                     <a href="#" id="cerrar-compra" class="card-link">Cerrar</a>
                   </div>
                 </div>
 
+                <div class="container-fluid"> <br> </div>
               </div>
 
             </div>
