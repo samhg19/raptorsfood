@@ -57,9 +57,6 @@ $(document).ready(function( )
         case '.historial':
           $( actualView ).addClass( 'd-none' );
           break;
-        case '.avisos':
-          $( actualView ).addClass( 'd-none' );
-          break;
       }
 
       actualView = '.start';
@@ -84,9 +81,6 @@ $(document).ready(function( )
           $( actualView ).addClass( 'd-none' );
           break;
         case '.historial':
-          $( actualView ).addClass( 'd-none' );
-          break;
-        case '.avisos':
           $( actualView ).addClass( 'd-none' );
           break;
       }
@@ -115,41 +109,9 @@ $(document).ready(function( )
         case '.menu':
           $( actualView ).addClass( 'd-none' );
           break;
-        case '.avisos':
-          $( actualView ).addClass( 'd-none' );
-          break;
       }
 
       actualView = '.historial';
-      $( actualView ).removeClass( 'd-none' );
-    }
-
-  });
-
-  $( '#notify' ).click( event =>
-  {
-    event.preventDefault( );
-
-    //activamos el color
-    activeItem( '#notify' );
-
-    //cambiamos la vista
-    if ( actualView != '.avisos' )
-    {
-      switch ( actualView )
-      {
-        case '.start':
-          $( actualView ).addClass( 'd-none' );
-          break;
-        case '.menu':
-          $( actualView ).addClass( 'd-none' );
-          break;
-        case '.historial':
-          $( actualView ).addClass( 'd-none' );
-          break;
-      }
-
-      actualView = '.avisos';
       $( actualView ).removeClass( 'd-none' );
     }
 

@@ -40,9 +40,6 @@ class App extends CI_Controller
       //historial
       $this->load->view( 'app/sections/history' );
 
-      //notificaciones
-      $this->load->view( 'app/sections/avisos' );
-
       $footer = array( 'js' => 'start' );
       $this->load->view( 'app/common/footer', $footer );
     }

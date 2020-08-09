@@ -7,7 +7,7 @@
     <title>Raptors food</title>
 
     <!-- Icono en tab -->
-    <link rel="icon" href="favicon.png">
+    <link rel="icon" href="<?= base_url( ) ?>resources/images/logo/logo.png">
 
     <!--Bootstrap Style-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"

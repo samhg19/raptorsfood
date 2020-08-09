@@ -16,8 +16,4 @@
           <i class="fas fa-scroll nav__icon"></i>
           <span class="nav__text">Historial</span>
         </a>
-        <a href="#" id="notify" class="nav-item-botom">
-          <i class="fas fa-bell nav__icon"></i>
-          <span class="nav__text">Avisos</span>
-        </a>
       </nav>
