@@ -1,6 +1,8 @@
 
             <div class="menu d-none animate__animated">
 
+              <div class="container-fluid mb-2"> <br> </div>
+
               <div class="menu-float-carrito card">
                 <div class="row">
                   <div class="col-6">
@@ -13,7 +15,7 @@
                       <li class="list-group-item">
                         <a href="#" id="carrito" class="cart-button">
                           <i class="fas fa-shopping-cart"></i>
-                          <span class="cart-items">0</span>
+                          <span class="cart-items" id="carrito-count">0</span>
                         </a>
                       </li>
                     </ul>
@@ -37,7 +39,7 @@
                     <div class="row">
                       <div class="col-1"></div>
                       <div class="col-5">
-                        <div class="card option" onclick="setCategorie(<?= $categoria->id ?>)">
+                        <div class="card option" onclick="setCategory(<?= $categoria->id ?>)">
                           <div class="card-body">
                             <i class="fas fa-3x <?= $categoria->icon ?>"></i>
                             <p><?= $categoria->nombre ?></p>
@@ -51,7 +53,7 @@
                         $isRow = true;
                     ?>
                       <div class="col-5">
-                        <div class="card option" onclick="setCategorie(<?= $categoria->id ?>)">
+                        <div class="card option" onclick="setCategory(<?= $categoria->id ?>)">
                           <div class="card-body">
                             <i class="fas fa-3x <?= $categoria->icon ?>"></i>
                             <p><?= $categoria->nombre ?></p>
@@ -70,7 +72,6 @@
                   <div class="card-header">Avisos</div>
                   <div class="card-body">
                     <p class="card-text">-> No hay servicio por COVID-19</p>
-                    <p class="card-text">-> Es un demo, ¿Que esperabas?</p>
                   </div>
                 </div>
               </div>
@@ -85,76 +86,13 @@
                         </a>
                       </div>
                       <div class="col-10">
-                        Categoria seleccionada
+                        <span id="pedido-categoria"> - </span>
                       </div>
                     </div>
                   </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                      <div class="row">
-                        <div class="col-6">
-                          <span>Producto 1</span>
-                        </div>
-                        <div class="col-2">
-                          <b>$--.--</b>
-                        </div>
-                        <div class="col-1"></div>
-                        <div class="col-2">
-                          <button type="button" id="item_<?= 1 ?>" class="btn btn-success btn-sm">
-                            Comprar
-                          </button>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="list-group-item">
-                      <div class="row">
-                        <div class="col-6">
-                          <span>Producto 2</span>
-                        </div>
-                        <div class="col-2">
-                          <b>$--.--</b>
-                        </div>
-                        <div class="col-1"></div>
-                        <div class="col-2">
-                          <button type="button" id="item_<?= 2 ?>" class="btn btn-success btn-sm">
-                            Comprar
-                          </button>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="list-group-item">
-                      <div class="row">
-                        <div class="col-6">
-                          <span>Producto 3</span>
-                        </div>
-                        <div class="col-2">
-                          <b>$--.--</b>
-                        </div>
-                        <div class="col-1"></div>
-                        <div class="col-2">
-                          <button type="button" id="item_<?= 3 ?>" class="btn btn-success btn-sm">
-                            Comprar
-                          </button>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="list-group-item">
-                      <div class="row">
-                        <div class="col-6">
-                          <span>Producto 4</span>
-                        </div>
-                        <div class="col-2">
-                          <b>$--.--</b>
-                        </div>
-                        <div class="col-1"></div>
-                        <div class="col-2">
-                          <button type="button" id="item_<?= 4 ?>" class="btn btn-success btn-sm">
-                            Comprar
-                          </button>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
+                  <div id="pedido-productos">
+
+                  </div>
                 </div>
               </div>
 

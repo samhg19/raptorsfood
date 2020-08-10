@@ -14,4 +14,15 @@ class AppModel extends CI_Model
     return $this->db->get( 'pedido' )->result( );
   }
 
+  function ProductsPerCategory( $data = null )
+  {
+    if ( $data != null )
+    {
+      $this->db->where( 'existencia', 1 );
+      $this->db->where( 'idCategoria', $data );
+      return $this->db->get( 'platillos' )->result( );
+    }
+    return null;
+  }
+
 }

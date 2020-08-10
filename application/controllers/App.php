@@ -171,6 +171,60 @@ class App extends CI_Controller
     echo json_encode( $servidor );
   }
 
+  function ProductsPerCategory()
+  {
+    $post = $this->input->post();
+
+    //enviamos los datos al modelo, para que haga el registro en la bd
+    $productos = $this->AppModel->ProductsPerCategory( $post[ 'categoria' ] );
+
+    $html = '<ul class="list-group list-group-flush">';
+    if ( count( $productos ) > 0 )
+    {
+      foreach ( $productos as $producto )
+      {
+        $html .= '<li class="list-group-item">';
+        $html .= '<div class="row">';
+        $html .= '<div class="col-6">';
+        $html .= '<span>' . $producto->nombre . '</span>';
+        $html .= '</div>';
+        $html .= '<div class="col-2">';
+        $html .= '$' .$producto->precio . ' c/u';
+        $html .= '</div>';
+        $html .= '<div class="col-1"></div>';
+        $html .= '<div class="col-2">';
+        $html .= '<button type="button" onClick="addCarrito( '. $producto->idplatillo .' )" class="btn btn-success btn-sm">';
+        $html .= 'Comprar';
+        $html .= '</button>';
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '</li>';
+      }
+    }
+    else
+    {
+      $html .= '<li class="list-group-item">';
+      $html .= '<div class="row">';
+      $html .= '<div class="col-lg-12 col-md-12 col-sm-12">';
+      $html .= '<div class="text-center">';
+      $html .= '<span>Sin productos</span>';
+      $html .= '</div>';
+      $html .= '</div>';
+      $html .= '</div>';
+      $html .= '</li>';
+    }
+    $html .= '</ul>';
+
+
+    $servidor =
+    [
+      'status' => 200,
+      'data' => $html,
+    ];
+
+    echo json_encode( $servidor );
+  }
+
   function GenerarPedido( )
   {
     //logica para generar pedido

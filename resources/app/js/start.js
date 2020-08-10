@@ -5,6 +5,8 @@ var beforeMenuView = '.menu-start';
 
 var url = $( '#url' ).val( );
 
+var contadorCarrito = 0;
+
 function activeItem( activar )
 {
   //removemos la clase de todos los elementos
@@ -45,16 +47,56 @@ function historial( )
 }
 
 //funciones externas del menu
-function setCategorie( id )
+function setCategory( id )
 {
   beforeMenuView = actualMenuView;
   actualMenuView = '.menu-items';
-  $( actualMenuView ).removeClass( 'd-none' );
-  $( '.menu-carrito' ).addClass( 'd-none' );
-  $( '.menu-start' ).addClass( 'd-none' );
 
-  //llamamos a la base de datos con el id de la categorias
-  //esto con el fin de obtener los productos de esa categoria
+  switch ( id )
+  {
+    case 1:
+      $( '#pedido-categoria' ).html( 'Bebidas' );
+      break;
+    case 2:
+      $( '#pedido-categoria' ).html( 'Comida' );
+      break;
+    case 3:
+      $( '#pedido-categoria' ).html( 'Dulces' );
+      break;
+    case 4:
+      $( '#pedido-categoria' ).html( 'Frituas' );
+      break;
+  }
+
+  $.ajax({
+    url: url + 'app/productos',
+    type: 'POST',
+    dataType: 'json',
+    data: { categoria: id },
+  })
+  .done( response =>
+  {
+    $( '#pedido-productos' ).html( response.data );
+
+    $( actualMenuView ).removeClass( 'd-none' );
+    $( '.menu-carrito' ).addClass( 'd-none' );
+    $( '.menu-start' ).addClass( 'd-none' );
+  });
+
+}
+
+function addCarrito( id )
+{
+  if ( localStorage.getItem( 'producto_' + contadorCarrito ) )
+  {
+    localStorage.setItem( 'producto_' + contadorCarrito, { id: id, cantidad: 1 } );
+  }
+  else
+  {
+    localStorage.setItem( 'producto_' + contadorCarrito, { id: id, cantidad: 1 } );
+  }
+
+  contadorCarrito++;
 }
 
 $(document).ready(function( )
