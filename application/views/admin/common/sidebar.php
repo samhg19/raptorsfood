@@ -25,7 +25,7 @@
                 <li class="nav-item">
                   <a href="<?= base_url( '/menu' ) ?>" <?php if ( $menu ) echo "class='nav-link active'"; else echo "class='nav-link'"; ?>>
                     <i class="nav-icon fas fa-clipboard"></i>
-                    Menú
+                    Productos
                   </a>
                 </li>
 

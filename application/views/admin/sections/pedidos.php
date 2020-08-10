@@ -6,121 +6,128 @@
               <div class="container-fluid mb-1"> <br> </div>
 
               <div class="row">
-                <div class="card w-100 ">
-                  <div class="card-header border-transparent">
-                    <h3 class="card-title">Ultimos pedidos</h3>
-
-                  </div>
-                  <div class="card-body p-0">
-                    <div class="table-responsive">
-                      <table class="table m-0 text-center">
-                        <thead>
-                          <tr>
-                            <th>ID</th>
-                            <th>Status</th>
-                            <th>Fecha - Hora</th>
-                            <th>#</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td><a href="#">OR9842</a></td>
-                            <td><span class="badge badge-success">Recogido</span></td>
-                            <td>
-                              <span> --/--/---- --:-- -:- </span>
-                            </td>
-                            <td>
-                              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
-                                Ver detalles
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td><a href="#">OR1848</a></td>
-                            <td><span class="badge badge-dark">Hecho</span></td>
-                            <td>
-                              <span> --/--/---- --:-- -:- </span>
-                            </td>
-                            <td>
-                              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
-                                Ver detalles
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td><a href="#">OR7429</a></td>
-                            <td><span class="badge badge-danger">Pendiente</span></td>
-                            <td>
-                              <span> --/--/---- --:-- -:- </span>
-                            </td>
-                            <td>
-                              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
-                                Ver detalles
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td><a href="#">OR7429</a></td>
-                            <td><span class="badge badge-info">Realizando</span></td>
-                            <td>
-                              <span> --/--/---- --:-- -:- </span>
-                            </td>
-                            <td>
-                              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
-                                Ver detalles
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td><a href="#">OR1848</a></td>
-                            <td><span class="badge badge-dark">Hecho</span></td>
-                            <td>
-                              <span> --/--/---- --:-- -:- </span>
-                            </td>
-                            <td>
-                              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
-                                Ver detalles
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td><a href="#">OR7429</a></td>
-                            <td><span class="badge badge-danger">Pendiente</span></td>
-                            <td>
-                              <span> --/--/---- --:-- -:- </span>
-                            </td>
-                            <td>
-                              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
-                                Ver detalles
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td><a href="#">OR9842</a></td>
-                            <td><span class="badge badge-success">Recogido</span></td>
-                            <td>
-                              <span> --/--/---- --:-- -:- </span>
-                            </td>
-                            <td>
-                              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
-                                Ver detalles
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td><a href="#">OR9842</a></td>
-                            <td><span class="badge badge-success">Recogido</span></td>
-                            <td>
-                              <span> --/--/---- --:-- -:- </span>
-                            </td>
-                            <td>
-                              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
-                                Ver detalles
-                              </button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+                <div class="col-12 col-md-12 col-sm-12">
+                  <div class="card">
+                    <div class="card-header text-center">
+                      <b>Mis pedidos actuales</b>
+                    </div>
+                    <div class="card-body text-center">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <div id="table-users">
+                              <table id="pedidos" class="table table-bordered display nowrap" cellspacing="0" width="100%">
+                                <thead>
+                                  <tr>
+                                    <th>ID</th>
+                                    <th>Status</th>
+                                    <th>Fecha - Hora</th>
+                                    <th>#</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td><a href="#">OR9842</a></td>
+                                    <td><span class="badge badge-success">Recogido</span></td>
+                                    <td>
+                                      <span> --/--/---- --:-- -:- </span>
+                                    </td>
+                                    <td>
+                                      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
+                                        Ver detalles
+                                      </button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="#">OR1848</a></td>
+                                    <td><span class="badge badge-dark">Hecho</span></td>
+                                    <td>
+                                      <span> --/--/---- --:-- -:- </span>
+                                    </td>
+                                    <td>
+                                      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
+                                        Ver detalles
+                                      </button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="#">OR7429</a></td>
+                                    <td><span class="badge badge-danger">Pendiente</span></td>
+                                    <td>
+                                      <span> --/--/---- --:-- -:- </span>
+                                    </td>
+                                    <td>
+                                      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
+                                        Ver detalles
+                                      </button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="#">OR7429</a></td>
+                                    <td><span class="badge badge-info">Realizando</span></td>
+                                    <td>
+                                      <span> --/--/---- --:-- -:- </span>
+                                    </td>
+                                    <td>
+                                      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
+                                        Ver detalles
+                                      </button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="#">OR1848</a></td>
+                                    <td><span class="badge badge-dark">Hecho</span></td>
+                                    <td>
+                                      <span> --/--/---- --:-- -:- </span>
+                                    </td>
+                                    <td>
+                                      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
+                                        Ver detalles
+                                      </button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="#">OR7429</a></td>
+                                    <td><span class="badge badge-danger">Pendiente</span></td>
+                                    <td>
+                                      <span> --/--/---- --:-- -:- </span>
+                                    </td>
+                                    <td>
+                                      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
+                                        Ver detalles
+                                      </button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="#">OR9842</a></td>
+                                    <td><span class="badge badge-success">Recogido</span></td>
+                                    <td>
+                                      <span> --/--/---- --:-- -:- </span>
+                                    </td>
+                                    <td>
+                                      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
+                                        Ver detalles
+                                      </button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="#">OR9842</a></td>
+                                    <td><span class="badge badge-success">Recogido</span></td>
+                                    <td>
+                                      <span> --/--/---- --:-- -:- </span>
+                                    </td>
+                                    <td>
+                                      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
+                                        Ver detalles
+                                      </button>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

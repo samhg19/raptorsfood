@@ -28,11 +28,6 @@
                 </a>
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item">
-                  <i class="fas fa-comment mr-2"></i> Nuevo mensaje
-                  <span class="float-right text-muted text-sm">5 mins</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
                   <i class="fas fa-pizza-slice mr-2"></i> ¡Nuevo pedido!
                   <span class="float-right text-muted text-sm">3 mins</span>
                 </a>

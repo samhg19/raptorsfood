@@ -4,6 +4,92 @@
             <div class="container-fluid">
 
 
+              <div class="container-fluid mb-2"> <br> </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="card">
+                    <div class="card-header text-center">
+                      <b>Mis productos</b>
+                    </div>
+                    <div class="card-body text-center">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <div id="table-users">
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="card">
+                    <div class="card-header text-center">
+                      <b>Alta nuevo producto</b>
+                    </div>
+                    <div class="card-body">
+                      <form class="new-user text-center">
+                        <div class="form-group">
+                          <span>Nombre</span>
+                          <input type="text" class="form-control mt-1" id="name" placeholder="example@mail.com">
+                        </div>
+                        <div class="form-group">
+                          <span>Descripción</span>
+                          <input type="text" class="form-control mt-1" id="desc" placeholder="Ejemplo: RF0001">
+                        </div>
+                        <div class="form-group">
+                          <span>Precio</span>
+                          <input type="text" class="form-control mt-1" id="name" placeholder="Nombre del usuario">
+                        </div>
+                        <div class="form-group">
+                          <span>Categoria</span>
+                          <input type="password" class="form-control mt-1" id="password">
+                        </div>
+                        <div class="form-group">
+                          <button type="submit" class="btn btn-success btn-block">
+                            Crear
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="card">
+                    <div class="card-header text-center">
+                      <b>Cambiar existencia</b>
+                    </div>
+                    <div class="card-body">
+                      <form class="new-user text-center">
+                        <div class="form-group">
+                          <span>Producto</span>
+                          <select class="form-control" id="select-product">
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <span>Status</span>
+                          <select class="form-control" id="status">
+                            <option value="0">Agotado</option>
+                            <option value="1">En existencia</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <button type="submit" class="btn btn-success btn-block">
+                            Actualizar
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
             </div>
           </div>
