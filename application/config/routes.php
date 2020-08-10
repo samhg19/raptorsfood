@@ -62,10 +62,12 @@ $route['usuarios'] = 'Admin/Usuarios';
 $route['menu'] = 'Admin/Menu';
 
 //rutas ajax - cafeteria - menu
+$route['menu/getProductos'] = 'Producto/GetProductos';
+$route['menu/newProduct'] = 'Producto/NewProducto';
+$route['menu/updateProduct'] = 'Producto/ChangeStatus';
 
 //rutas ajax - cafeteria - pedidos
 
-//rutas ajax - cafeteria - mensajes
 
 //rutas ajax - cafeteria - usuario
 $route['usuarios/newAdmin'] = 'Usuario/NewAdmin';

@@ -16,7 +16,7 @@
                       <div class="container">
                         <div class="row">
                           <div class="col-lg-12">
-                            <div id="table-users">
+                            <div id="table-productos">
 
                             </div>
                           </div>
@@ -34,22 +34,27 @@
                       <b>Alta nuevo producto</b>
                     </div>
                     <div class="card-body">
-                      <form class="new-user text-center">
+                      <form class="new-product text-center">
                         <div class="form-group">
                           <span>Nombre</span>
-                          <input type="text" class="form-control mt-1" id="name" placeholder="example@mail.com">
+                          <input type="text" class="form-control mt-1" id="name">
                         </div>
                         <div class="form-group">
                           <span>Descripción</span>
-                          <input type="text" class="form-control mt-1" id="desc" placeholder="Ejemplo: RF0001">
+                          <input type="text" class="form-control mt-1" id="desc">
                         </div>
                         <div class="form-group">
                           <span>Precio</span>
-                          <input type="text" class="form-control mt-1" id="name" placeholder="Nombre del usuario">
+                          <input type="number" class="form-control mt-1" id="precio">
                         </div>
                         <div class="form-group">
                           <span>Categoria</span>
-                          <input type="password" class="form-control mt-1" id="password">
+                          <select class="form-control" id="categoria">
+                            <option value="1">Bebidas</option>
+                            <option value="2">Comida</option>
+                            <option value="3">Dulces</option>
+                            <option value="4">Frituras</option>
+                          </select>
                         </div>
                         <div class="form-group">
                           <button type="submit" class="btn btn-success btn-block">
@@ -67,7 +72,7 @@
                       <b>Cambiar existencia</b>
                     </div>
                     <div class="card-body">
-                      <form class="new-user text-center">
+                      <form class="update-product text-center">
                         <div class="form-group">
                           <span>Producto</span>
                           <select class="form-control" id="select-product">

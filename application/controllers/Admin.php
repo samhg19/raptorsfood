@@ -46,7 +46,7 @@ class Admin extends CI_Controller
     //no queremos chismosos ni alumnos chismosos
     if ( $this->session->userdata( 'isLogin' ) && $this->session->userdata( 'isAdmin' ) == 1 )
     {
-      $assets = array( 'css' => 'pedidos', 'js' => 'pedidos' );
+      $assets = array( 'css' => 'menu', 'js' => 'menu' );
 
       $this->load->view( 'admin/common/head', $assets );
 

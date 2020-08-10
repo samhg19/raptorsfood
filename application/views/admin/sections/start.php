@@ -22,9 +22,9 @@
 
                 <div class="col-12 col-sm-6 col-md-4">
                   <div class="info-box mb-3">
-                    <span class="info-box-icon bg-success elevation-1"><i class="fas fa-comment"></i></span>
+                    <span class="info-box-icon bg-success elevation-1"><i class="fas fa-check-circle"></i></span>
                     <div class="info-box-content">
-                      <span class="info-box-text">Mensajes por responder</span>
+                      <span class="info-box-text">Pedidos entregados</span>
                       <span class="info-box-number">1</span>
                     </div>
                   </div>
