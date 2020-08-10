@@ -28,7 +28,20 @@ function currentPedidos( )
   {
     $( '#start-current-pedidos' ).html( response.data );
   });
+}
 
+function historial( )
+{
+  $.ajax({
+    url: url + 'app/historial',
+    type: 'GET',
+    dataType: 'json',
+  })
+  .done( response =>
+  {
+    console.log( response );
+    $( '#history-pedidos' ).html( response.data );
+  });
 }
 
 //funciones externas del menu
@@ -108,6 +121,8 @@ $(document).ready(function( )
 
     //activamos el color
     activeItem( '#historico' );
+
+    historial( );
 
     //cambiamos la vista
     if ( actualView != '.historial' )

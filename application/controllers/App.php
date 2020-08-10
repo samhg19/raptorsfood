@@ -110,7 +110,65 @@ class App extends CI_Controller
 
   function MisPedidos( )
   {
+    $html = '';
+    if ( count( $this->AppModel->MisPedidos( ) ) > 0 )
+    {
+      foreach ( $this->AppModel->MisPedidos( ) as $pedido )
+      {
+        $html .= '<div class="card text-center">';
+        $html .= '<div class="card-header bg-light">';
+        $html .= '<div class="row">';
+        $html .= '<div class="col-lg-4 col-md-4 col-sm-4">';
+        $html .= $pedido->idpedido;
+        $html .= '</div>';
+        $html .= '<div class="col-lg-4 col-md-4 col-sm-4">';
+        switch ( $pedido->status )
+        {
+          case 'pendiente':
+            $html .= '<span class="badge badge-danger">Pendiente</span>';
+            break;
+          case 'proceso':
+            $html .= '<span class="badge badge-info">Realizando</span>';
+            break;
+          case 'listo':
+            $html .= '<span class="badge badge-dark">Hecho</span>';
+            break;
+          case 'recogido':
+            $html .= '<span class="badge badge-success">Recolectado</span>';
+            break;
+        }
+        $html .= '</div>';
+        $html .= '<div class="col-lg-4 col-md-4 col-sm-4">';
+        $html .= '<button type="button" class="btn btn-success btn-block btn-sm" data-toggle="modal" data-target="#pedidoDetails">';
+        $html .= 'Detalles';
+        $html .= '</button>';
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '</div>';
+      }
+    }
+    else
+    {
+      $html .= '<div class="card text-center">';
+      $html .= '<div class="card-header bg-light">';
+      $html .= '<div class="row">';
+      $html .= '<div class="col-lg-12 col-md-12 col-sm-12">';
+      $html .= '<div class="text-center">';
+      $html .= '<span>Sin pedidos</span>';
+      $html .= '</div>';
+      $html .= '</div>';
+      $html .= '</div>';
+      $html .= '</div>';
+      $html .= '</div>';
+    }
 
+    $servidor = array(
+      'status' => 200,
+      'data' => $html,
+    );
+
+    echo json_encode( $servidor );
   }
 
   function GenerarPedido( )

@@ -8,76 +8,8 @@
                 </div>
               </div>
 
-              <div class="card text-center">
-                <div class="card-header bg-light">
-                  <div class="row">
-                    <div class="col-4 col-md-4 col-sm-4">
-                      Pedido ------
-                    </div>
-                    <div class="col-4 col-md-4 col-sm-4">
-                      <span class="badge badge-success">Recolectado</span>
-                    </div>
-                    <div class="col-4 col-md-4 col-sm-4">
-                      <button type="button" class="btn btn-success btn-block btn-sm" data-toggle="modal" data-target="#pedidoDetails">
-                        Detalles
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div id="history-pedidos">
 
-              <div class="card text-center">
-                <div class="card-header bg-light">
-                  <div class="row">
-                    <div class="col-4 col-md-4 col-sm-4">
-                      Pedido ------
-                    </div>
-                    <div class="col-4 col-md-4 col-sm-4">
-                      <span class="badge badge-dark">Hecho</span>
-                    </div>
-                    <div class="col-4 col-md-4 col-sm-4">
-                      <button type="button" class="btn btn-success btn-block btn-sm" data-toggle="modal" data-target="#pedidoDetails">
-                        Detalles
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card text-center">
-                <div class="card-header bg-light">
-                  <div class="row">
-                    <div class="col-4 col-md-4 col-sm-4">
-                      Pedido ------
-                    </div>
-                    <div class="col-4 col-md-4 col-sm-4">
-                      <span class="badge badge-danger">Pendiente</span>
-                    </div>
-                    <div class="col-4 col-md-4 col-sm-4">
-                      <button type="button" class="btn btn-success btn-block btn-sm" data-toggle="modal" data-target="#pedidoDetails">
-                        Detalles
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card text-center">
-                <div class="card-header bg-light">
-                  <div class="row">
-                    <div class="col-4 col-md-4 col-sm-4">
-                      Pedido ------
-                    </div>
-                    <div class="col-4 col-md-4 col-sm-4">
-                      <span class="badge badge-info">Realizando</span>
-                    </div>
-                    <div class="col-4 col-md-4 col-sm-4">
-                      <button type="button" class="btn btn-success btn-block btn-sm" data-toggle="modal" data-target="#pedidoDetails">
-                        Detalles
-                      </button>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               <div class="modal fade" id="pedidoDetails" tabindex="-1" aria-labelledby="pedidoDetailsLabel" aria-hidden="true">
@@ -90,7 +22,7 @@
                       </button>
                     </div>
                     <div class="modal-body">
-
+                      
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>

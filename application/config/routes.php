@@ -76,8 +76,11 @@ $route['usuarios/getAdmins'] = 'Usuario/GetAdmins';
 //rutas del alumno
 $route['app'] = 'App/Index';
 
-//rutas ajax - alumno -start
+//rutas ajax - alumno - start
 $route['app/start/pedidos'] = 'App/MisPedidosActuales';
+
+//rutas ajax - alumno - historial
+$route['app/historial'] = 'App/MisPedidos';
 
 $route['default_controller'] = 'Auth/Login';
 $route['404_override'] = '';
