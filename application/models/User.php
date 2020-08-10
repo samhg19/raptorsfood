@@ -65,4 +65,36 @@ class User extends CI_Model
     return false;
   }
 
+  function GetAdmins( )
+  {
+    $this->db->where( 'isAdmin', 1 );
+    $this->db->select( 'nombre, matricula' );
+    $usuarios = $this->db->get( 'usuario' );
+
+    return $usuarios->result( );
+  }
+
+  function RegisterAdmin( $data = null )
+  {
+    if ( $data != null )
+    {
+
+      //construimos el SQL
+      $sql = array(
+        'matricula' => $data[ 'matricula' ],
+        'nombre' => $data[ 'nombre' ],
+        'email' => $data[ 'email' ],
+        'password' => password_hash( $data['password'], PASSWORD_DEFAULT ),
+        'carrera' => 'N/A',
+        'isAdmin' => 1
+      );
+
+      //si se hizo el insert
+      if ( $this->db->insert( 'usuario', $sql ) )
+        return true;
+
+    }
+    return false;
+  }
+
 }

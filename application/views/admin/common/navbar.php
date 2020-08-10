@@ -5,15 +5,10 @@
               <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item">
-              <div class="code-container nav-link">
+              <a class="nav-link" data-toggle="modal" data-target="#scanqrModal" role="button">
                 <i class="fas fa-qrcode"></i>
-                Leer pedido
-                <input type=file
-                      accept="image/*"
-                      capture=environment
-                      onChange="scanQR(this)"
-                      tabindex=-1/>
-              </div>
+                Entregar pedido
+              </a>
             </li>
           </ul>
 

@@ -24,6 +24,10 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 
+    <!--   Datatables-->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+
     <!-- QR -->
     <script src="<?= base_url( ) ?>resources/plugins/qr/qr_packed.js"></script>
 
@@ -41,7 +45,7 @@
           {
             if ( !( res instanceof Error ) )
             {
-              //pasamos a la siguiente vista
+              //validamos el QR pertenezca a un pedido
               console.log( res );
             }
             else

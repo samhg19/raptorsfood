@@ -19,9 +19,14 @@
     <!-- AdminLTE 3 -->
     <link rel="stylesheet" href="<?= base_url( ) ?>resources/plugins/adminlte/css/adminlte.min.css">
 
+    <!--  Datatables  -->
+   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css">
+   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+
     <!-- Own style -->
     <link rel="stylesheet" href="<?= base_url( ) ?>resources/admin/css/<?= $css ?>.css">
 
   </head>
-  <body>
+  <body class="sidebar-collapse">
     <div class="wrapper">
+      <input type="hidden" value="<?= base_url( ) ?>" id="url">

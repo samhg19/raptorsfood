@@ -1,6 +1,21 @@
 
+.scanner-instructions
+{
+  background-color: #aaaaaa;
+  color: #FFFFFF;
+  text-align: center !important;
+  align-items: center;
+}
+
+.options-container
+{
+  align-items: center;
+  text-align: center;
+}
+
 .code-container
 {
+  padding: 1% 1% 1% 1%;
   cursor: pointer;
 }
 

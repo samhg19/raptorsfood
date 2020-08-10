@@ -58,6 +58,11 @@ $route['registro'] = 'Auth/Register';
 //rutas del cafeteria
 $route['inicio'] = 'Admin/Index';
 $route['pedidos'] = 'Admin/Pedidos';
+$route['usuarios'] = 'Admin/Usuarios';
+
+//rutas ajax - cafeteria -usuario
+$route['usuarios/newAdmin'] = 'Usuario/NewAdmin';
+$route['usuarios/getAdmins'] = 'Usuario/GetAdmins';
 
 //rutas del alumno
 $route['app'] = 'App/Index';
