@@ -11,10 +11,24 @@ function activeItem( activar )
   $( '#home' ).removeClass( 'active' );
   $( '#nuevo_pedido' ).removeClass( 'active' );
   $( '#historico' ).removeClass( 'active' );
-  $( '#notify' ).removeClass( 'active' );
 
   //la agregamos al elemento
   $( activar ).addClass( 'active' );
+}
+
+//funciones externas del inicio
+function currentPedidos( )
+{
+  $.ajax({
+    url: url + 'app/start/pedidos',
+    type: 'GET',
+    dataType: 'json',
+  })
+  .done( response =>
+  {
+    $( '#start-current-pedidos' ).html( response.data );
+  });
+
 }
 
 //funciones externas del menu
@@ -32,9 +46,6 @@ function setCategorie( id )
 
 $(document).ready(function( )
 {
-  //URL del servidor
-  let url = $('#url').val( );
-
   //Vista actual
   let actualView = '.start';
 
@@ -117,8 +128,10 @@ $(document).ready(function( )
 
   });
 
-  //funciones del menú
+  //funciones del inicio
+  currentPedidos( );
 
+  //funciones del menú
   $( '#carrito' ).click(function (event)
   {
     event.preventDefault( );

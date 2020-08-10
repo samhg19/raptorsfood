@@ -47,6 +47,72 @@ class App extends CI_Controller
       header( 'Location: ' . base_url( '/login' ) );
   }
 
+  function MisPedidosActuales( )
+  {
+    $html = '<ul class="list-group list-group-flush">';
+    if ( count( $this->AppModel->MisPedidos( ) ) > 0 )
+    {
+      foreach ( $this->AppModel->MisPedidos( ) as $pedido )
+      {
+        if ( $pedido->status != 'recogido' )
+        {
+          $html .= '<li class="list-group-item">';
+          $html .= '<div class="row">';
+          $html .= '<div class="col-lg-6 col-md-6 col-sm-6">';
+          $html .= $pedido->idpedido;
+          $html .= '</div>';
+          $html .= '<div class="col-lg-3 col-md-3 col-sm-3">';
+          switch ( $pedido->status )
+          {
+            case 'pendiente':
+              $html .= '<span class="badge badge-danger">Pendiente</span>';
+              break;
+            case 'proceso':
+              $html .= '<span class="badge badge-info">Realizando</span>';
+              break;
+            case 'listo':
+              $html .= '<span class="badge badge-dark">Hecho</span>';
+              break;
+          }
+          $html .= '</div>';
+          $html .= '<div class="col-2 col-md-2 col-sm-2"></div>';
+          $html .= '<div class="col-1 col-md-1 col-sm-1">';
+          $html .= '<a href="#" class="text-success">';
+          $html .= '<i class="fas fa-chevron-circle-right"></i>';
+          $html .= '</a>';
+          $html .= '</div>';
+          $html .= '</div>';
+          $html .= '</li>';
+        }
+      }
+    }
+    else
+    {
+      $html .= '<li class="list-group-item">';
+      $html .= '<div class="row">';
+      $html .= '<div class="col-lg-12 col-md-12 col-sm-12">';
+      $html .= '<div class="text-center">';
+      $html .= '<span>Sin pedidos</span>';
+      $html .= '</div>';
+      $html .= '</div>';
+      $html .= '</div>';
+      $html .= '</li>';
+    }
+    $html .= '</ul>';
+
+    $servidor = array(
+      'status' => 200,
+      'data' => $html,
+    );
+
+    echo json_encode( $servidor );
+  }
+
+  function MisPedidos( )
+  {
+
+  }
+
   function GenerarPedido( )
   {
     //logica para generar pedido
