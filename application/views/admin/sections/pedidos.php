@@ -1,14 +1,12 @@
 
-        <!-- Todos los archivos del admin deben contener esta base -->
-        <!-- sino en el navegador parecerá que cada elmento estará -->
-        <!-- con problemas de drogas -->
-
         <div class="content-wrapper">
           <div class="content">
             <div class="container-fluid">
 
+              <div class="container-fluid mb-1"> <br> </div>
+
               <div class="row">
-                <div class="card w-100 mt-5 ">
+                <div class="card w-100 ">
                   <div class="card-header border-transparent">
                     <h3 class="card-title">Ultimos pedidos</h3>
 
@@ -124,9 +122,6 @@
                         </tbody>
                       </table>
                     </div>
-                  </div>
-                  <div class="card-footer clearfix">
-                    <a href="javascript:void(0)" class="btn btn-sm btn-success float-right">Ver más</a>
                   </div>
                 </div>
               </div>

@@ -23,7 +23,7 @@
                 </li>
 
                 <li class="nav-item">
-                  <a href="#" <?php if ( $menu ) echo "class='nav-link active'"; else echo "class='nav-link'"; ?>>
+                  <a href="<?= base_url( '/menu' ) ?>" <?php if ( $menu ) echo "class='nav-link active'"; else echo "class='nav-link'"; ?>>
                     <i class="nav-icon fas fa-clipboard"></i>
                     Menú
                   </a>
@@ -33,13 +33,6 @@
                   <a href="<?= base_url( '/pedidos' ) ?>" <?php if ( $pedidos ) echo "class='nav-link active'"; else echo "class='nav-link'"; ?>>
                     <i class="nav-icon fas fa-box"></i>
                     Pedidos
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a href="#" <?php if ( $mensajes ) echo "class='nav-link active'"; else echo "class='nav-link'"; ?>>
-                    <i class="nav-icon fas fa-comment"></i>
-                    Mensajes
                   </a>
                 </li>
 
