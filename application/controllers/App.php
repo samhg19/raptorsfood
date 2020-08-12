@@ -193,7 +193,7 @@ class App extends CI_Controller
         $html .= '</div>';
         $html .= '<div class="col-1"></div>';
         $html .= '<div class="col-2">';
-        $html .= '<button type="button" onClick="addCarrito( '. $producto->idplatillo .' )" class="btn btn-success btn-sm">';
+        $html .= '<button type="button" onclick="saveid( '.$producto->idplatillo.', '. $producto->precio .' )" class="btn btn-success btn-sm">';
         $html .= 'Comprar';
         $html .= '</button>';
         $html .= '</div>';

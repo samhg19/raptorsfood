@@ -181,4 +181,29 @@
                 <div class="container-fluid"> <br> </div>
               </div>
 
+              <div class="modal fade" id="pedidoModal" tabindex="-1" role="dialog" aria-labelledby="pedidoModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="pedidoModalLabel">¿Cuantas unidades?</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="count-form">
+                        <div class="form-group">
+                          <input type="number" class="form-control" id="countPedido" value="1">
+                          <small id="countPedidoHelp" class="form-text text-muted">Selecciona correctamente la cantidad que deseas comprar</small>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
+                      <button type="button" class="btn btn-success btn-sm" id="make-Pedido">Comprar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>

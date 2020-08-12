@@ -6,6 +6,7 @@ var beforeMenuView = '.menu-start';
 var url = $( '#url' ).val( );
 
 var contadorCarrito = 0;
+var productosCarrito = [ ];
 
 function activeItem( activar )
 {
@@ -41,7 +42,6 @@ function historial( )
   })
   .done( response =>
   {
-    console.log( response );
     $( '#history-pedidos' ).html( response.data );
   });
 }
@@ -85,18 +85,13 @@ function setCategory( id )
 
 }
 
-function addCarrito( id )
+function saveid( id, precio )
 {
-  if ( localStorage.getItem( 'producto_' + contadorCarrito ) )
-  {
-    localStorage.setItem( 'producto_' + contadorCarrito, { id: id, cantidad: 1 } );
-  }
-  else
-  {
-    localStorage.setItem( 'producto_' + contadorCarrito, { id: id, cantidad: 1 } );
-  }
+  localStorage.setItem( 'id', id );
+  localStorage.setItem( 'precio', precio );
 
-  contadorCarrito++;
+  $('#pedidoModal' ).modal( 'show' );
+
 }
 
 $(document).ready(function( )
@@ -214,6 +209,53 @@ $(document).ready(function( )
 
     actualMenuView = beforeMenuView;
     beforeMenuView = '.menu-start';
+
+  });
+
+  $( '#make-Pedido' ).click( event =>
+  {
+    event.preventDefault( );
+
+    let producto = localStorage.getItem( 'id' );
+    let precio = localStorage.getItem( 'precio' );
+    let cantidad = $( '#countPedido' ).val( );
+
+    let item =
+    {
+      id: producto,
+      cantidad: cantidad,
+      costo: precio,
+      total: ( precio * cantidad ),
+    };
+
+    productosCarrito.push( item );
+
+    contadorCarrito++;
+    $( '#carrito-count' ).html( contadorCarrito );
+
+    $('#pedidoModal' ).modal( 'hide' );
+
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass:
+      {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-secondary'
+      },
+      buttonsStyling: false
+    });
+
+    swalWithBootstrapButtons.fire({
+      customClass:
+      {
+        confirmButton: 'btn btn-success',
+      },
+      icon: 'success',
+      text: '¡Producto agregado a tu cesta!',
+      showCancelButton: true,
+      cancelButtonText: 'Seguir comprando',
+      confirmButtonText: 'Ir al carrito',
+    });
+
 
   });
 
