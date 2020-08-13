@@ -95,6 +95,63 @@ function saveid( id, precio )
 
 }
 
+function carrito( )
+{
+  let ids = [ ];
+
+  productosCarrito.forEach( ( element , i ) =>
+  {
+    ids.push( element.id );
+  });
+
+  $.ajax({
+    url: url + 'app/carrito',
+    type: 'POST',
+    dataType: 'json',
+    data: { data: ids, }
+  })
+  .done( response =>
+  {
+    if ( response.status == 200 )
+    {
+      let array = response.data;
+
+      array.forEach( ( item, i ) =>
+      {
+
+        let cantidad = productosCarrito[ i ].cantidad;
+        let totalProducto = parseInt( item.precio ) * cantidad;
+        let plantilla =
+        `
+          <tr>
+            <td>${ item.nombre }</td>
+            <td class="text-center">${ cantidad }</td>
+            <td>$${ new Intl.NumberFormat( ).format( totalProducto, { minimumFractionDigits: 2 } ) }</td>
+            <td>
+              <a href="#" class="text-danger" onClick="alert( )">
+                <i class="fas fa-times"></i>
+              </a>
+            </td>
+          </tr>
+        `;
+
+        $( '#carrito-products-body' ).append( plantilla );
+        totalCarrito += totalProducto;
+
+      });
+
+      $( '#carrito-products-total' ).html( `$${ new Intl.NumberFormat( ).format( totalCarrito, { minimumFractionDigits: 2 } ) }` );
+    }
+    else
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'No se pudo acceder al carrito, intente más tarde',
+      });
+  });
+
+}
+
 function alert()
 {
   console.log( 'asd' );
@@ -194,60 +251,10 @@ $(document).ready(function( )
   {
     event.preventDefault( );
 
-    let ids = [ ];
-
-    productosCarrito.forEach( ( element , i ) =>
-    {
-      ids.push( element.id );
-    });
-
-    $.ajax({
-      url: url + 'app/carrito',
-      type: 'POST',
-      dataType: 'json',
-      data: { data: ids, }
-    })
-    .done( response =>
-    {
-      if ( response.status == 200 )
-      {
-        let array = response.data;
-
-        array.forEach( ( item, i ) =>
-        {
-
-          let cantidad = productosCarrito[ i ].cantidad;
-          let totalProducto = parseInt( item.precio ) * cantidad;
-          let plantilla =
-          `
-            <tr>
-              <td>${ item.nombre }</td>
-              <td class="text-center">${ cantidad }</td>
-              <td>$${ new Intl.NumberFormat( ).format( totalProducto, { minimumFractionDigits: 2 } ) }</td>
-              <td>
-                <a href="#" class="text-danger" onClick="alert( )">
-                  <i class="fas fa-times"></i>
-                </a>
-              </td>
-            </tr>
-          `;
-
-          $( '#carrito-products-body' ).append( plantilla );
-          totalCarrito += totalProducto;
-        });
-
-        $( '#carrito-products-total' ).html( `$${ new Intl.NumberFormat( ).format( totalCarrito, { minimumFractionDigits: 2 } ) }` );
-      }
-      else
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'No se pudo acceder al carrito, intente más tarde',
-        });
-    });
+    carrito( );
 
     //cambiamos la vista
-    if ( actualView != '.menu-carrito' )
+    if ( actualMenuView != '.menu-carrito' )
     {
       beforeMenuView = actualMenuView;
       actualMenuView = '.menu-carrito';
@@ -255,7 +262,6 @@ $(document).ready(function( )
       $( '.menu-items' ).addClass( 'd-none' );
       $( '.menu-start' ).addClass( 'd-none' );
     }
-
   });
 
   $( '.menu-back' ).click(function (event)
@@ -291,27 +297,39 @@ $(document).ready(function( )
 
     $('#pedidoModal' ).modal( 'hide' );
 
-    const swalWithBootstrapButtons = Swal.mixin({
-      customClass:
-      {
-        confirmButton: 'btn btn-success',
-        cancelButton: 'btn btn-secondary'
-      },
-      buttonsStyling: false
-    });
-
-    swalWithBootstrapButtons.fire({
-      customClass:
-      {
-        confirmButton: 'btn btn-success',
-      },
+    Swal.fire(
+    {
       icon: 'success',
       text: '¡Producto agregado a tu cesta!',
+      customClass:
+      {
+        confirmButton: 'btn btn-success btn-sm',
+        cancelButton: 'btn btn-secondary btn-sm'
+      },
+      buttonsStyling: false,
       showCancelButton: true,
       cancelButtonText: 'Seguir comprando',
       confirmButtonText: 'Ir al carrito',
+      reverseButtons: true,
+    }).then((result) =>
+    {
+      if (result.value)
+      {
+        carrito( );
+
+        //cambiamos la vista
+        if ( actualMenuView != '.menu-carrito' )
+        {
+          beforeMenuView = actualMenuView;
+          actualMenuView = '.menu-carrito';
+          $( actualMenuView ).removeClass( 'd-none' );
+          $( '.menu-items' ).addClass( 'd-none' );
+          $( '.menu-start' ).addClass( 'd-none' );
+        }
+      }
     });
 
+    $( '#countPedido' ).val( '1' );
 
   });
 
