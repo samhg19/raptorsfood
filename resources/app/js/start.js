@@ -302,20 +302,37 @@ $(document).ready(function( )
   {
     event.preventDefault( );
 
+    let preview = false;
+
     let producto = localStorage.getItem( 'id' );
     let precio = localStorage.getItem( 'precio' );
     let cantidad = $( '#countPedido' ).val( );
 
-    let item =
+    //validamos que el producto sea nuevo,
+    //en caso contrario lo anexamos a la cuenta anterior
+    productosCarrito.forEach( ( item, i ) =>
     {
-      id: producto,
-      cantidad: cantidad,
-    };
+      if ( item.id == producto )
+      {
+        preview = true;
+        let newCantidad = parseInt( item.cantidad ) + parseInt( cantidad );
+        item.cantidad = newCantidad;
+      }
+    });
 
-    productosCarrito.push( item );
+    if ( !preview )
+    {
+      let item =
+      {
+        id: producto,
+        cantidad: cantidad,
+      };
 
-    contadorCarrito++;
-    $( '#carrito-count' ).html( contadorCarrito );
+      productosCarrito.push( item );
+
+      contadorCarrito++;
+      $( '#carrito-count' ).html( contadorCarrito );
+    }
 
     $('#pedidoModal' ).modal( 'hide' );
 
