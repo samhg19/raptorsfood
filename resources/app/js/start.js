@@ -180,6 +180,79 @@ function deleteFromCarrito( id )
 }
 
 //funciones externas del historico
+function viewDetails( id )
+{
+  $.ajax({
+    url: url + 'app/detallesPedido',
+    type: 'POST',
+    dataType: 'json',
+    data: { idPedido: id, }
+  })
+  .done( response =>
+  {
+    if ( response.status != 200 )
+    {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'No se pudo obtener la informacion del pedido',
+      });
+    }
+    else if ( response.status == 200 )
+    {
+      $( '#modal-productos-pedido' ).html( '' );
+      let informacion = response.data;
+      let status;
+
+      switch ( informacion.order.status )
+      {
+        case 'pendiente':
+          status = '<span class="badge badge-danger">Pendiente</span>';
+          break;
+        case 'proceso':
+          status = '<span class="badge badge-info">Realizando</span>';
+          break;
+        case 'listo':
+          status = '<span class="badge badge-dark">Hecho</span>';
+          break;
+        case 'recogido':
+          status = '<span class="badge badge-success">Recogido</span>';
+          break;
+      }
+
+      $( '#modal-codigo-pedido' ).html( informacion.order.idpedido );
+      $( '#modal-status-pedido' ).html( status );
+      $( '#modal-total-pedido' ).html( informacion.order.total );
+
+      informacion.products.forEach( ( item, i ) =>
+      {
+        let fila =
+        `
+          <tr>
+            <td>${ item.nombre }</td>
+            <td>${ informacion.orderDetails[ i ].cantidad }</td>
+          </tr>
+        `;
+
+        $( '#modal-productos-pedido' ).append( fila );
+      });
+
+      if ( informacion.order.status != 'recogido' )
+      {
+        $( '#qr-image' ).attr( 'src', url + `resources/images/pedidos/qrPedido_${ informacion.order.idpedido }.png` );
+
+        $( '#qr-image-modal' ).removeClass( 'd-none' );
+      }
+      else
+      {
+        $( '#qr-image-modal' ).addClass( 'd-none' );
+      }
+
+      $( '#pedidoDetails' ).modal( 'show' );
+    }
+  });
+
+}
 
 $(document).ready(function( )
 {

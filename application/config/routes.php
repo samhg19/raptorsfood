@@ -85,6 +85,7 @@ $route['app/start/pedidos'] = 'App/MisPedidosActuales';
 
 //rutas ajax - alumno - historial
 $route['app/historial'] = 'App/MisPedidos';
+$route['app/detallesPedido'] = 'App/DetallesPedido';
 
 //rutas ajax - alumno - pedidos
 $route['app/productos'] = 'App/ProductsPerCategory';

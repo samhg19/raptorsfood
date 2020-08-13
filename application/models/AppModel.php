@@ -83,4 +83,37 @@ class AppModel extends CI_Model
     return null;
   }
 
+  function OrderDetails( $id = null )
+  {
+    if( $id != null )
+    {
+      //buscamos la información del pedido
+      $this->db->where( 'idpedido', $id );
+      $pedido = $this->db->get( 'pedido' )->result( )[ 0 ];
+
+      //agregamos los productos
+      $this->db->where( 'idpedido', $id );
+      $pedidoProductos = $this->db->get( 'pedido_detalles' )->result( );
+
+      $productos = [ ];
+
+      foreach ( $pedidoProductos as $product )
+      {
+        $this->db->where( 'idplatillo', $product->idplatillo );
+        array_push( $productos, $this->db->get( 'platillos' )->result( )[ 0 ] );
+      }
+
+      //creamos un array para enviar toda la informacion
+      $data =
+      [
+        'order' => $pedido,
+        'orderDetails' => $pedidoProductos,
+        'products' => $productos
+      ];
+
+      return $data;
+    }
+    return null;
+  }
+
 }

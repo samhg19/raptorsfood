@@ -77,9 +77,18 @@ class App extends CI_Controller
           $html .= '</div>';
           $html .= '<div class="col-2 col-md-2 col-sm-2"></div>';
           $html .= '<div class="col-1 col-md-1 col-sm-1">';
-          $html .= '<a href="#" class="text-success">';
-          $html .= '<i class="fas fa-chevron-circle-right"></i>';
-          $html .= '</a>';
+          $html .= '</div>';
+          $html .= '</div>';
+          $html .= '</li>';
+        }
+        else
+        {
+          $html .= '<li class="list-group-item">';
+          $html .= '<div class="row">';
+          $html .= '<div class="col-lg-12 col-md-12 col-sm-12">';
+          $html .= '<div class="text-center">';
+          $html .= '<span>Sin pedidos</span>';
+          $html .= '</div>';
           $html .= '</div>';
           $html .= '</div>';
           $html .= '</li>';
@@ -139,7 +148,7 @@ class App extends CI_Controller
         }
         $html .= '</div>';
         $html .= '<div class="col-4">';
-        $html .= '<button type="button" class="btn btn-success btn-block btn-sm" data-toggle="modal" data-target="#pedidoDetails">';
+        $html .= '<button type="button" class="btn btn-success btn-block btn-sm" onClick="viewDetails( '. $pedido->idpedido .' )">';
         $html .= 'Detalles';
         $html .= '</button>';
         $html .= '</div>';
@@ -166,6 +175,20 @@ class App extends CI_Controller
     $servidor = array(
       'status' => 200,
       'data' => $html,
+    );
+
+    echo json_encode( $servidor );
+  }
+
+  function DetallesPedido( )
+  {
+    $post = $this->input->post();
+
+    $data = $this->AppModel->OrderDetails( $post[ 'idPedido' ] );
+
+    $servidor = array(
+      'status' => 200,
+      'data' => $data,
     );
 
     echo json_encode( $servidor );

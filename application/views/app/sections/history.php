@@ -22,7 +22,62 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      
+
+                      <div class="table-responsive">
+                        <table class="table">
+                          <tbody>
+                            <tr>
+                              <th scope="row">Código del pedido</th>
+                              <td><span id="modal-codigo-pedido"></span></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Status</th>
+                              <td><span id="modal-status-pedido"></span></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Total</th>
+                              <td>$<span id="modal-total-pedido"></span></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <p class="text-center">
+                        <b>Productos</b>
+                      </p>
+
+                      <div class="table-responsive">
+                        <table class="table text-center">
+                          <thead>
+                            <tr>
+                              <th scope="col">Producto</th>
+                              <th scope="col">Cantidad</th>
+                            </tr>
+                          </thead>
+                          <tbody id="modal-productos-pedido">
+
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <div id="qr-image-modal">
+                        <div class="row">
+                          <div class="col-12">
+                            <p class="text-center">
+                              <b>Codigo QR</b>
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-12">
+                            <p class="text-center">
+                              <img src="" alt="Codigo QR del pedido" class="img-fluid" id="qr-image">
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
