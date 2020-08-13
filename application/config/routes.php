@@ -67,7 +67,10 @@ $route['menu/newProduct'] = 'Producto/NewProducto';
 $route['menu/updateProduct'] = 'Producto/ChangeStatus';
 
 //rutas ajax - cafeteria - pedidos
-
+$route['pedidos/getPedidos'] = 'Pedido/AllPedidos';
+$route['pedidos/getPedidoDetails'] = 'Pedido/GetPedidoDetails';
+$route['pedidos/setDoing'] = 'Pedido/doPedido';
+$route['pedidos/setDo'] = 'Pedido/pedidoHecho';
 
 //rutas ajax - cafeteria - usuario
 $route['usuarios/newAdmin'] = 'Usuario/NewAdmin';

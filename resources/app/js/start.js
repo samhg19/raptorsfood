@@ -179,6 +179,8 @@ function deleteFromCarrito( id )
   $( '#carrito-products-total' ).html( `$${ new Intl.NumberFormat( ).format( totalCarrito, { minimumFractionDigits: 2 } ) }` );
 }
 
+//funciones externas del historico
+
 $(document).ready(function( )
 {
   //Vista actual

@@ -15,115 +15,8 @@
                       <div class="container">
                         <div class="row">
                           <div class="col-lg-12">
-                            <div id="table-users">
-                              <table id="pedidos" class="table table-bordered display nowrap" cellspacing="0" width="100%">
-                                <thead>
-                                  <tr>
-                                    <th>ID</th>
-                                    <th>Status</th>
-                                    <th>Fecha - Hora</th>
-                                    <th>#</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <td><a href="#">OR9842</a></td>
-                                    <td><span class="badge badge-success">Recogido</span></td>
-                                    <td>
-                                      <span> --/--/---- --:-- -:- </span>
-                                    </td>
-                                    <td>
-                                      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
-                                        Ver detalles
-                                      </button>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td><a href="#">OR1848</a></td>
-                                    <td><span class="badge badge-dark">Hecho</span></td>
-                                    <td>
-                                      <span> --/--/---- --:-- -:- </span>
-                                    </td>
-                                    <td>
-                                      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
-                                        Ver detalles
-                                      </button>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td><a href="#">OR7429</a></td>
-                                    <td><span class="badge badge-danger">Pendiente</span></td>
-                                    <td>
-                                      <span> --/--/---- --:-- -:- </span>
-                                    </td>
-                                    <td>
-                                      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
-                                        Ver detalles
-                                      </button>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td><a href="#">OR7429</a></td>
-                                    <td><span class="badge badge-info">Realizando</span></td>
-                                    <td>
-                                      <span> --/--/---- --:-- -:- </span>
-                                    </td>
-                                    <td>
-                                      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
-                                        Ver detalles
-                                      </button>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td><a href="#">OR1848</a></td>
-                                    <td><span class="badge badge-dark">Hecho</span></td>
-                                    <td>
-                                      <span> --/--/---- --:-- -:- </span>
-                                    </td>
-                                    <td>
-                                      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
-                                        Ver detalles
-                                      </button>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td><a href="#">OR7429</a></td>
-                                    <td><span class="badge badge-danger">Pendiente</span></td>
-                                    <td>
-                                      <span> --/--/---- --:-- -:- </span>
-                                    </td>
-                                    <td>
-                                      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
-                                        Ver detalles
-                                      </button>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td><a href="#">OR9842</a></td>
-                                    <td><span class="badge badge-success">Recogido</span></td>
-                                    <td>
-                                      <span> --/--/---- --:-- -:- </span>
-                                    </td>
-                                    <td>
-                                      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
-                                        Ver detalles
-                                      </button>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td><a href="#">OR9842</a></td>
-                                    <td><span class="badge badge-success">Recogido</span></td>
-                                    <td>
-                                      <span> --/--/---- --:-- -:- </span>
-                                    </td>
-                                    <td>
-                                      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pedido-details">
-                                        Ver detalles
-                                      </button>
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
+                            <div id="table-pedidos">
+
                             </div>
                           </div>
                         </div>
@@ -153,19 +46,19 @@
                     <tbody>
                       <tr>
                         <th scope="row">Código del pedido</th>
-                        <td>OR9842</td>
+                        <td><span id="modal-codigo-pedido"></span></td>
                       </tr>
                       <tr>
                         <th scope="row">Dueño</th>
-                        <td>Nombre de la persona</td>
+                        <td><span id="modal-nombre-usuario"></span></td>
                       </tr>
                       <tr>
                         <th scope="row">Status</th>
-                        <td>status</td>
+                        <td><span id="modal-status-pedido"></span></td>
                       </tr>
                       <tr>
                         <th scope="row">Total</th>
-                        <td>$---.--</td>
+                        <td>$<span id="modal-total-pedido"></span></td>
                       </tr>
                     </tbody>
                   </table>
@@ -183,28 +76,17 @@
                         <th scope="col">Cantidad</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td>Producto 1</td>
-                        <td>2</td>
-                      </tr>
-                      <tr>
-                        <td>Producto 2</td>
-                        <td>3</td>
-                      </tr>
-                      <tr>
-                        <td>Producto 3</td>
-                        <td>5</td>
-                      </tr>
+                    <tbody id="modal-productos-pedido">
+
                     </tbody>
                   </table>
                 </div>
 
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-info">Abrir chat</button>
-                <button type="button" class="btn btn-success">Realizar</button>
-                <button type="button" class="btn btn-dark">Hecho</button>
+                <div id="buttons-pedido">
+                  
+                </div>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
               </div>
             </div>
