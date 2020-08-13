@@ -50,7 +50,11 @@
             }
             else
             {
-              imprimir( '¡Ups!', 'No se detectó el código QR. Intente de nuevo', 'error' );
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'No se detectó el código QR. Intente de nuevo',
+              });
             }
           };
           qrcode.decode(reader.result);
