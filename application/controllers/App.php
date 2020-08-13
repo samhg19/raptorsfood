@@ -58,10 +58,10 @@ class App extends CI_Controller
         {
           $html .= '<li class="list-group-item">';
           $html .= '<div class="row">';
-          $html .= '<div class="col-lg-6 col-md-6 col-sm-6">';
+          $html .= '<div class="col-6">Pedido <b>#';
           $html .= $pedido->idpedido;
-          $html .= '</div>';
-          $html .= '<div class="col-lg-3 col-md-3 col-sm-3">';
+          $html .= '</b></div>';
+          $html .= '<div class="col-3">';
           switch ( $pedido->status )
           {
             case 'pendiente':
@@ -118,10 +118,10 @@ class App extends CI_Controller
         $html .= '<div class="card text-center">';
         $html .= '<div class="card-header bg-light">';
         $html .= '<div class="row">';
-        $html .= '<div class="col-lg-4 col-md-4 col-sm-4">';
+        $html .= '<div class="col-4">Pedido <b>#';
         $html .= $pedido->idpedido;
-        $html .= '</div>';
-        $html .= '<div class="col-lg-4 col-md-4 col-sm-4">';
+        $html .= '</b></div>';
+        $html .= '<div class="col-4">';
         switch ( $pedido->status )
         {
           case 'pendiente':
@@ -138,7 +138,7 @@ class App extends CI_Controller
             break;
         }
         $html .= '</div>';
-        $html .= '<div class="col-lg-4 col-md-4 col-sm-4">';
+        $html .= '<div class="col-4">';
         $html .= '<button type="button" class="btn btn-success btn-block btn-sm" data-toggle="modal" data-target="#pedidoDetails">';
         $html .= 'Detalles';
         $html .= '</button>';
