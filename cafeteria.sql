@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-08-2020 a las 21:40:23
+-- Tiempo de generación: 13-08-2020 a las 20:39:52
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.5
 
@@ -65,10 +65,17 @@ CREATE TABLE `entrega` (
 CREATE TABLE `pedido` (
   `idpedido` int(11) NOT NULL,
   `matricula_usuario` varchar(12) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
   `total` float DEFAULT NULL,
   `status` enum('pendiente','proceso','listo','recogido') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `pedido`
+--
+
+INSERT INTO `pedido` (`idpedido`, `matricula_usuario`, `created_at`, `total`, `status`) VALUES
+(1, 'A0353', '2020-08-13 02:58:37', 6, 'recogido');
 
 -- --------------------------------------------------------
 
@@ -82,6 +89,14 @@ CREATE TABLE `pedido_detalles` (
   `idplatillo` int(11) DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `pedido_detalles`
+--
+
+INSERT INTO `pedido_detalles` (`idpedido_detalles`, `idpedido`, `idplatillo`, `cantidad`) VALUES
+(1, 1, 2, 1),
+(2, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -103,7 +118,8 @@ CREATE TABLE `platillos` (
 --
 
 INSERT INTO `platillos` (`idplatillo`, `nombre`, `descripcion`, `precio`, `idcategoria`, `existencia`) VALUES
-(1, 'Picafresas', '-', 1, 3, 1);
+(1, 'Picafresas', '-', 1, 3, 1),
+(2, 'Mazapan', '-', 5, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -126,7 +142,6 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`matricula`, `nombre`, `email`, `password`, `carrera`, `isAdmin`) VALUES
 ('A0353', 'Samantha Hernández', 'samantha@gmail.com', '$2y$10$MUUp9sqT0QcIyaGVI8cv0Oj4cWc8Y5PGVm2RZkKvss1wK7TMEYKoC', 'TIC\'s', 0),
-('asda13', 'asdasdasd', 'asd@asd.com', '$2y$10$ZrAjMViEfc2MvKdBb82wpOgdWkekMwTc4TKg6rS1AyKmR47SNvWZK', 'N/A', 1),
 ('RF001', 'Nombre inventado', 'RaptorsFood1@gmail.com', '$2y$10$7sS775qgt8er3YMviUSw2u6S7HaLaFGHUEQT1pQCm1GX3YenJaWlu', 'N/A', 1);
 
 --
@@ -186,10 +201,22 @@ ALTER TABLE `entrega`
   MODIFY `identrega` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `pedido`
+--
+ALTER TABLE `pedido`
+  MODIFY `idpedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `pedido_detalles`
+--
+ALTER TABLE `pedido_detalles`
+  MODIFY `idpedido_detalles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de la tabla `platillos`
 --
 ALTER TABLE `platillos`
-  MODIFY `idplatillo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idplatillo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
