@@ -7,6 +7,7 @@ var url = $( '#url' ).val( );
 
 var contadorCarrito = 0;
 var productosCarrito = [ ];
+var productosCarritoCosto = [ ];
 var totalCarrito = 0;
 
 function activeItem( activar )
@@ -99,6 +100,9 @@ function carrito( )
 {
   let ids = [ ];
 
+  $( '#carrito-products-body' ).html( '' );
+  totalCarrito = 0;
+
   productosCarrito.forEach( ( element , i ) =>
   {
     ids.push( element.id );
@@ -118,17 +122,16 @@ function carrito( )
 
       array.forEach( ( item, i ) =>
       {
-
         let cantidad = productosCarrito[ i ].cantidad;
         let totalProducto = parseInt( item.precio ) * cantidad;
         let plantilla =
         `
-          <tr>
+          <tr id="table-product-${ item.idplatillo }">
             <td>${ item.nombre }</td>
             <td class="text-center">${ cantidad }</td>
             <td>$${ new Intl.NumberFormat( ).format( totalProducto, { minimumFractionDigits: 2 } ) }</td>
             <td>
-              <a href="#" class="text-danger" onClick="alert( )">
+              <a href="#" class="text-danger" onClick="deleteFromCarrito( ${ item.idplatillo } )">
                 <i class="fas fa-times"></i>
               </a>
             </td>
@@ -137,7 +140,7 @@ function carrito( )
 
         $( '#carrito-products-body' ).append( plantilla );
         totalCarrito += totalProducto;
-
+        productosCarritoCosto.push ( totalProducto );
       });
 
       $( '#carrito-products-total' ).html( `$${ new Intl.NumberFormat( ).format( totalCarrito, { minimumFractionDigits: 2 } ) }` );
@@ -152,9 +155,28 @@ function carrito( )
 
 }
 
-function alert()
+function deleteFromCarrito( id )
 {
-  console.log( 'asd' );
+
+  let total;
+
+  for ( let i = 0; i < productosCarrito.length; i++ )
+  {
+    if ( productosCarrito[i].id == id )
+    {
+      total = productosCarritoCosto[ i ];
+      productosCarritoCosto.splice( i, 1 );
+      productosCarrito.splice( i, 1 );
+    }
+  }
+
+  $( `#table-product-${ id }` ).html( '' );
+
+  contadorCarrito--;
+  $( '#carrito-count' ).html( contadorCarrito );
+
+  totalCarrito = totalCarrito - total;
+  $( '#carrito-products-total' ).html( `$${ new Intl.NumberFormat( ).format( totalCarrito, { minimumFractionDigits: 2 } ) }` );
 }
 
 $(document).ready(function( )
