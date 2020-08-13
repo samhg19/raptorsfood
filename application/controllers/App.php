@@ -243,26 +243,43 @@ class App extends CI_Controller
 
   function GenerarPedido( )
   {
-    //logica para generar pedido
+    $post = $this->input->post();
 
-    //logica para generar QR
-    //ubicacion - local
-    $SERVERFILEPATH = $_SERVER['DOCUMENT_ROOT'] . '/raptorsfood/resources/images/pedidos/';
-    //ubicacion -servidor
-    //$SERVERFILEPATH = $_SERVER['DOCUMENT_ROOT'] . '/resources/images/pedidos/';
+    $pedido = $this->AppModel->NewPedido( $post[ 'data' ], $post[ 'total' ] );
 
-    $qr_name = 'qrPedido_' . 2 . '.png';
-    $place = $SERVERFILEPATH . $qr_name;
+    if ( $pedido != null )
+    {
+      //logica para generar QR
+      //ubicacion - local
+      $SERVERFILEPATH = $_SERVER['DOCUMENT_ROOT'] . '/raptorsfood/resources/images/pedidos/';
+      //ubicacion -servidor
+      //$SERVERFILEPATH = $_SERVER['DOCUMENT_ROOT'] . '/resources/images/pedidos/';
 
-    QRcode::png( 'Prueba', $place );
+      $qr_name = 'qrPedido_' . $pedido . '.png';
+      $place = $SERVERFILEPATH . $qr_name;
 
-    $servidor =
-    [
-      'status' => 200,
-      'qr' => base_url( ) .'resources/images/pedidos/' . $qr_name,
-    ];
+      QRcode::png( 'Prueba', $place );
 
-    echo json_encode( $servidor );
+      $servidor =
+      [
+        'status' => 200,
+        'qr' => base_url( ) .'resources/images/pedidos/' . $qr_name,
+        'id' => $pedido,
+      ];
+
+      echo json_encode( $servidor );
+    }
+    else
+    {
+      $servidor =
+      [
+        'status' => 400,
+        'msg' => 'Error al generar el pedido',
+      ];
+
+      echo json_encode( $servidor );
+    }
+
   }
 
 }

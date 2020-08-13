@@ -164,7 +164,7 @@
                     <p class="card-text text-center">Utiliza este código QR para recoger tu pedido</p>
                     <p class="card-text text-center">ó</p>
                     <p class="card-text text-center">utiliza el siguiente código</p>
-                    <p class="card-text text-center"><span><b>OR9842</b></span></p>
+                    <p class="card-text text-center"><span><b id="id-pedido"></b></span></p>
                   </div>
                   <div class="card-body text-center">
                     <a href="#" id="cerrar-compra" class="card-link">Cerrar</a>

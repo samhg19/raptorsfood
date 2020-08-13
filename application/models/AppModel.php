@@ -44,4 +44,43 @@ class AppModel extends CI_Model
     return null;
   }
 
+  function NewPedido( $data = null, $total = null )
+  {
+    if ( $data != null || $total != null  )
+    {
+      //creamos el pedido
+      try
+      {
+        $pedido =
+        [
+          'matricula_usuario' => $this->session->userdata( 'matricula' ),
+          'total' => $total,
+          'status' => 'pendiente',
+        ];
+
+        $idPedido = $this->db->insert( 'pedido', $pedido );
+
+        //guardamos los productos del pedido
+        foreach ( $data as $producto )
+        {
+          $pedidoDetail =
+          [
+            'idpedido' => $idPedido,
+            'idplatillo' => $producto[ 'id' ],
+            'cantidad' => $producto[ 'cantidad' ],
+          ];
+
+          $this->db->insert( 'pedido_detalles', $pedidoDetail );
+        }
+
+        return $idPedido;
+      }
+      catch (\Exception $e)
+      {
+        return null;
+      }
+    }
+    return null;
+  }
+
 }

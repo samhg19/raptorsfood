@@ -372,16 +372,16 @@ $(document).ready(function( )
 
   });
 
-  $( '#do-pedido' ).click(function (event)
+  $( '#do-pedido' ).click( event =>
   {
     event.preventDefault( );
 
     //realizamos la petición
     $.ajax({
-      url: url + 'App/GenerarPedido',
+      url: url + 'app/newPedido',
       type: 'POST',
       dataType: 'json',
-      data: { pedido: 1, }
+      data: { data: productosCarrito, total: totalCarrito, }
     })
     .done( response =>
     {
@@ -397,12 +397,18 @@ $(document).ready(function( )
       {
 
         $( '#qr-pedido-image' ).attr( 'src', response.qr);
+        $( '#id-pedido' ).html( response.id );
 
         actualMenuView = '.menu-pedido';
         beforeMenuView = '.menu-start';
 
         $( actualMenuView ).removeClass( 'd-none' );
         $( '.menu-carrito' ).addClass( 'd-none' );
+
+        contadorCarrito = 0;
+        productosCarrito = [ ];
+        productosCarritoCosto = [ ];
+        totalCarrito = 0;
       }
     });
 
