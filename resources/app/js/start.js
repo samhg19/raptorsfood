@@ -7,6 +7,7 @@ var url = $( '#url' ).val( );
 
 var contadorCarrito = 0;
 var productosCarrito = [ ];
+var totalCarrito = 0;
 
 function activeItem( activar )
 {
@@ -92,6 +93,11 @@ function saveid( id, precio )
 
   $('#pedidoModal' ).modal( 'show' );
 
+}
+
+function alert()
+{
+  console.log( 'asd' );
 }
 
 $(document).ready(function( )
@@ -195,18 +201,50 @@ $(document).ready(function( )
       ids.push( element.id );
     });
 
-    console.log( ids );
-
-    /*$.ajax({
-      url: url + '',
+    $.ajax({
+      url: url + 'app/carrito',
       type: 'POST',
       dataType: 'json',
-      data: { pedido: 1, }
+      data: { data: ids, }
     })
     .done( response =>
     {
-      console.log( response );
-    });*/
+      if ( response.status == 200 )
+      {
+        let array = response.data;
+
+        array.forEach( ( item, i ) =>
+        {
+
+          let cantidad = productosCarrito[ i ].cantidad;
+          let totalProducto = parseInt( item.precio ) * cantidad;
+          let plantilla =
+          `
+            <tr>
+              <td>${ item.nombre }</td>
+              <td class="text-center">${ cantidad }</td>
+              <td>$${ new Intl.NumberFormat( ).format( totalProducto, { minimumFractionDigits: 2 } ) }</td>
+              <td>
+                <a href="#" class="text-danger" onClick="alert( )">
+                  <i class="fas fa-times"></i>
+                </a>
+              </td>
+            </tr>
+          `;
+
+          $( '#carrito-products-body' ).append( plantilla );
+          totalCarrito += totalProducto;
+        });
+
+        $( '#carrito-products-total' ).html( `$${ new Intl.NumberFormat( ).format( totalCarrito, { minimumFractionDigits: 2 } ) }` );
+      }
+      else
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'No se pudo acceder al carrito, intente más tarde',
+        });
+    });
 
     //cambiamos la vista
     if ( actualView != '.menu-carrito' )
@@ -244,8 +282,6 @@ $(document).ready(function( )
     {
       id: producto,
       cantidad: cantidad,
-      costo: precio,
-      total: ( precio * cantidad ),
     };
 
     productosCarrito.push( item );

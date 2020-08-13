@@ -123,32 +123,13 @@
                             <th scope="col"></th>
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                            <td>Producto 1</td>
-                            <td class="text-center">1</td>
-                            <td>$--.--</td>
-                            <td>
-                              <a href="#" class="text-danger">
-                                <i class="fas fa-times"></i>
-                              </a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Producto 2</td>
-                            <td class="text-center">3</td>
-                            <td>$--.--</td>
-                            <td>
-                              <a href="#" class="text-danger">
-                                <i class="fas fa-times"></i>
-                              </a>
-                            </td>
-                          </tr>
+                        <tbody id="carrito-products-body">
+
                         </tbody>
                         <tfoot>
                           <tr>
                             <th colspan="2">Total</td>
-                            <td>$---.--</td>
+                            <td><span id="carrito-products-total">$---.--</span></td>
                             <td></td>
                           </tr>
                         </tfoot>

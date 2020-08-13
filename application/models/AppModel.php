@@ -25,4 +25,23 @@ class AppModel extends CI_Model
     return null;
   }
 
+  function GetCarrito( $data = null )
+  {
+    if ( $data != null )
+    {
+      $productos = [ ];
+
+      foreach ( $data as $producto )
+      {
+        $this->db->where( 'idplatillo', $producto );
+        $product = $this->db->get( 'platillos' )->result( )[ 0 ];
+
+        array_push( $productos, $product );
+      }
+
+      return $productos;
+    }
+    return null;
+  }
+
 }

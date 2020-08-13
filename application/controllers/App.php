@@ -171,7 +171,7 @@ class App extends CI_Controller
     echo json_encode( $servidor );
   }
 
-  function ProductsPerCategory()
+  function ProductsPerCategory( )
   {
     $post = $this->input->post();
 
@@ -223,6 +223,22 @@ class App extends CI_Controller
     ];
 
     echo json_encode( $servidor );
+  }
+
+  function GetAllCarrito( )
+  {
+    $post = $this->input->post();
+
+    $products = $this->AppModel->GetCarrito( $post[ 'data' ] );
+
+    $servidor =
+    [
+      'status' => 200,
+      'data' => $products,
+    ];
+
+    echo json_encode( $servidor );
+
   }
 
   function GenerarPedido( )

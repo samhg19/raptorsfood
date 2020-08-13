@@ -84,6 +84,7 @@ $route['app/historial'] = 'App/MisPedidos';
 
 //rutas ajax - alumno - pedidos
 $route['app/productos'] = 'App/ProductsPerCategory';
+$route['app/carrito'] = 'App/GetAllCarrito';
 
 $route['default_controller'] = 'Auth/Login';
 $route['404_override'] = '';
