@@ -120,6 +120,7 @@
                             <th scope="col">Producto</th>
                             <th scope="col">Cantidad</th>
                             <th scope="col">total</th>
+                            <th scope="col"></th>
                           </tr>
                         </thead>
                         <tbody>
@@ -127,17 +128,28 @@
                             <td>Producto 1</td>
                             <td class="text-center">1</td>
                             <td>$--.--</td>
+                            <td>
+                              <a href="#" class="text-danger">
+                                <i class="fas fa-times"></i>
+                              </a>
+                            </td>
                           </tr>
                           <tr>
                             <td>Producto 2</td>
                             <td class="text-center">3</td>
                             <td>$--.--</td>
+                            <td>
+                              <a href="#" class="text-danger">
+                                <i class="fas fa-times"></i>
+                              </a>
+                            </td>
                           </tr>
                         </tbody>
                         <tfoot>
                           <tr>
                             <th colspan="2">Total</td>
                             <td>$---.--</td>
+                            <td></td>
                           </tr>
                         </tfoot>
                       </table>
@@ -191,12 +203,10 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      <form class="count-form">
-                        <div class="form-group">
-                          <input type="number" class="form-control" id="countPedido" value="1">
-                          <small id="countPedidoHelp" class="form-text text-muted">Selecciona correctamente la cantidad que deseas comprar</small>
-                        </div>
-                      </form>
+                      <div class="form-group">
+                        <input type="number" class="form-control" id="countPedido" value="1">
+                        <small id="countPedidoHelp" class="form-text text-muted">Selecciona correctamente la cantidad que deseas comprar</small>
+                      </div>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>

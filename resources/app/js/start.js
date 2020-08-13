@@ -188,6 +188,26 @@ $(document).ready(function( )
   {
     event.preventDefault( );
 
+    let ids = [ ];
+
+    productosCarrito.forEach( ( element , i ) =>
+    {
+      ids.push( element.id );
+    });
+
+    console.log( ids );
+
+    /*$.ajax({
+      url: url + '',
+      type: 'POST',
+      dataType: 'json',
+      data: { pedido: 1, }
+    })
+    .done( response =>
+    {
+      console.log( response );
+    });*/
+
     //cambiamos la vista
     if ( actualView != '.menu-carrito' )
     {
