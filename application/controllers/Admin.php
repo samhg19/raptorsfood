@@ -5,6 +5,9 @@ class Admin extends CI_Controller
   public function __construct()
   {
     parent::__construct();
+
+    //Carga de la base de datos
+    $this->load->model('Order');
   }
 
   //Acceso al sistema para gente de la cafeteria
@@ -103,37 +106,6 @@ class Admin extends CI_Controller
       header( 'Location: ' . base_url( '/login' ) );
   }
 
-  function Mensajes($value='')
-  {
-    //no queremos chismosos ni alumnos chismosos
-    if ( $this->session->userdata( 'isLogin' ) && $this->session->userdata( 'isAdmin' ) == 1 )
-    {
-      $assets = array( 'css' => 'pedidos', 'js' => 'pedidos' );
-
-      $this->load->view( 'admin/common/head', $assets );
-
-      $this->load->view( 'admin/common/navbar' );
-
-      $sidebar =
-      [
-        'name' => $this->session->userdata( 'nombre' ),
-        'dashboard' => false,
-        'menu' => false,
-        'pedidos' => false,
-        'mensajes' => true,
-        'usuarios' => false,
-      ];
-      $this->load->view( 'admin/common/sidebar', $sidebar );
-
-      //contenido de la vista
-      $this->load->view( 'admin/sections/mensajes' );
-
-      $this->load->view( 'admin/common/footer', $assets );
-    }
-    else
-      header( 'Location: ' . base_url( '/login' ) );
-  }
-
   function Usuarios( )
   {
     //no queremos chismosos ni alumnos chismosos
@@ -164,4 +136,19 @@ class Admin extends CI_Controller
     else
       header( 'Location: ' . base_url( '/login' ) );
   }
+
+  function SearchPedido( )
+  {
+    $post = $this->input->post( );
+
+    $data = $this->Order->OrderById( $post[ 'pedido' ] );
+
+    $servidor = array(
+      'status' => 200,
+      'data' => $data,
+    );
+
+    echo json_encode( $servidor );
+  }
+
 }

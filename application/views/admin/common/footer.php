@@ -46,7 +46,7 @@
             if ( !( res instanceof Error ) )
             {
               //validamos el QR pertenezca a un pedido
-              console.log( res );
+              searchPedido( res )
             }
             else
             {
@@ -56,6 +56,59 @@
           qrcode.decode(reader.result);
         };
         reader.readAsDataURL(node.files[0]);
+      }
+
+      function search( )
+      {
+        let id = $( '#pedidoTextInput' ).val( );
+        if (id != '' || id != null)
+        {
+          searchPedido( id );
+        }
+      }
+
+      function searchPedido( id )
+      {
+        let url = $( '#url' ).val( );
+
+        $.ajax({
+          url: url + 'search/getPedido',
+          type: 'POST',
+          dataType: 'json',
+          data: { pedido: id }
+        })
+        .done( response =>
+        {
+          if ( response.status != 200 )
+          {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'No se pudo encontrar el pedido',
+            });
+          }
+          else if ( response.status == 200 )
+          {
+            let informacion = response.data;
+
+            $( '#idPedido-modal' ).html( id );
+            $( '#usuario-modal' ).html( informacion.nombre );
+
+            //cambiamos las vistas
+            $( '.part-2' ).removeClass( 'd-none' );
+            $( '.part-1' ).addClass( 'd-none' );
+          }
+        });
+      }
+
+      function closeModal( )
+      {
+        $( '#pedidoTextInput' ).val( '' );
+
+        $( '.part-2' ).addClass( 'd-none' );
+        $( '.part-1' ).removeClass( 'd-none' );
+
+        $( '#scanqrModal' ).modal( 'hide' );
       }
 
     </script>

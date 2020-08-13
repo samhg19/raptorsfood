@@ -8,6 +8,25 @@ class Order extends CI_Model
     return $this->db->get( 'pedido' )->result( );
   }
 
+  function OrderById( $id = null )
+  {
+    if ($id != null)
+    {
+      $this->db->where( 'idpedido', $id );
+      $pedido = $this->db->get( 'pedido' )->result( )[ 0 ];
+
+      //actualizamos el pedido
+      $this->db->where( 'idpedido', $id );
+      $this->db->set( 'status', 'recogido' );
+      $this->db->update( 'pedido' );
+
+      //buscamos al ususario
+      $this->db->where( 'matricula', $pedido->matricula_usuario );
+      return $this->db->get( 'usuario' )->result( )[ 0 ];
+    }
+    return null;
+  }
+
   function OrderDetails( $id = null )
   {
     if( $id != null )

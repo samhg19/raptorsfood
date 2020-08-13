@@ -60,6 +60,7 @@ $route['inicio'] = 'Admin/Index';
 $route['pedidos'] = 'Admin/Pedidos';
 $route['usuarios'] = 'Admin/Usuarios';
 $route['menu'] = 'Admin/Menu';
+$route['search/getPedido'] = 'Admin/SearchPedido';
 
 //rutas ajax - cafeteria - menu
 $route['menu/getProductos'] = 'Producto/GetProductos';
